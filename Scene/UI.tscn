@@ -1,0 +1,402 @@
+[gd_scene load_steps=23 format=2]
+
+[ext_resource path="res://Assets/Resource/kenney_font_30.tres" type="DynamicFont" id=1]
+[ext_resource path="res://Assets/Resource/kenney_font_50.tres" type="DynamicFont" id=2]
+[ext_resource path="res://Scene/UI.gd" type="Script" id=3]
+[ext_resource path="res://Assets/other/coooldown_screen.png" type="Texture" id=4]
+[ext_resource path="res://test/mobile_game_theme.tres" type="Theme" id=5]
+[ext_resource path="res://Assets/Icons/fastForward.png" type="Texture" id=6]
+[ext_resource path="res://Assets/Icons/pause.png" type="Texture" id=7]
+[ext_resource path="res://Assets/Font/Kamalla.ttf" type="DynamicFontData" id=8]
+[ext_resource path="res://Assets/Icons/home.png" type="Texture" id=9]
+[ext_resource path="res://Assets/UI/HPbar.jpg" type="Texture" id=10]
+[ext_resource path="res://Crud Asset/Complementary.png" type="Texture" id=11]
+[ext_resource path="res://Assets/Font/Kenney Future Narrow.ttf" type="DynamicFontData" id=12]
+[ext_resource path="res://Scene/ButtonBuildTemplate.tscn" type="PackedScene" id=13]
+[ext_resource path="res://Crud Asset/macrophage_02.png" type="Texture" id=14]
+[ext_resource path="res://Crud Asset/Neutrophills_02.png" type="Texture" id=15]
+[ext_resource path="res://Crud Asset/BCell.png" type="Texture" id=17]
+[ext_resource path="res://Crud Asset/Tcell.png" type="Texture" id=18]
+
+[sub_resource type="Theme" id=7]
+
+[sub_resource type="DynamicFont" id=8]
+size = 45
+extra_spacing_char = 4
+font_data = ExtResource( 8 )
+
+[sub_resource type="Animation" id=4]
+resource_name = "LowHp"
+length = 0.5
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:tint_progress")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.3 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 0.819608, 0, 0.0823529, 1 ) ]
+}
+
+[sub_resource type="DynamicFont" id=3]
+size = 25
+outline_size = 1
+outline_color = Color( 0, 0, 0, 0.403922 )
+font_data = ExtResource( 12 )
+
+[sub_resource type="DynamicFont" id=5]
+size = 25
+outline_size = 1
+outline_color = Color( 0, 0, 0, 0.403922 )
+font_data = ExtResource( 12 )
+
+[node name="UI" type="CanvasLayer"]
+script = ExtResource( 3 )
+
+[node name="HUD" type="Control" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 2
+
+[node name="BuildBar" type="HBoxContainer" parent="HUD"]
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = -512.0
+margin_top = -100.0
+margin_right = 512.0
+rect_min_size = Vector2( 400, 100 )
+mouse_filter = 2
+custom_constants/separation = 25
+alignment = 1
+
+[node name="Complementary" parent="HUD/BuildBar" instance=ExtResource( 13 )]
+margin_left = 262.0
+margin_top = 10.0
+margin_right = 342.0
+margin_bottom = 90.0
+
+[node name="Icon" parent="HUD/BuildBar/Complementary" index="0"]
+rect_rotation = 0.0
+texture = ExtResource( 11 )
+
+[node name="CostLabel" parent="HUD/BuildBar/Complementary" index="1"]
+text = "3"
+
+[node name="Cooldown" type="TextureProgress" parent="HUD/BuildBar/Complementary"]
+margin_right = 40.0
+margin_bottom = 40.0
+rect_min_size = Vector2( 80, 80 )
+step = 0.1
+texture_progress = ExtResource( 4 )
+texture_progress_offset = Vector2( 6.952, 7.629 )
+fill_mode = 3
+tint_progress = Color( 1, 1, 1, 0.596078 )
+
+[node name="cooldown_timer" type="Timer" parent="HUD/BuildBar/Complementary"]
+one_shot = true
+
+[node name="Macrophage" parent="HUD/BuildBar" instance=ExtResource( 13 )]
+margin_left = 367.0
+margin_top = 10.0
+margin_right = 447.0
+margin_bottom = 90.0
+
+[node name="Icon" parent="HUD/BuildBar/Macrophage" index="0"]
+texture = ExtResource( 14 )
+
+[node name="Cooldown" type="TextureProgress" parent="HUD/BuildBar/Macrophage"]
+margin_right = 40.0
+margin_bottom = 40.0
+rect_min_size = Vector2( 80, 80 )
+step = 0.1
+texture_progress = ExtResource( 4 )
+texture_progress_offset = Vector2( 6.952, 7.629 )
+fill_mode = 3
+tint_progress = Color( 1, 1, 1, 0.596078 )
+
+[node name="cooldown_timer" type="Timer" parent="HUD/BuildBar/Macrophage"]
+one_shot = true
+
+[node name="Neutrophils" parent="HUD/BuildBar" instance=ExtResource( 13 )]
+margin_left = 472.0
+margin_top = 10.0
+margin_right = 552.0
+margin_bottom = 90.0
+
+[node name="Icon" parent="HUD/BuildBar/Neutrophils" index="0"]
+texture = ExtResource( 15 )
+
+[node name="CostLabel" parent="HUD/BuildBar/Neutrophils" index="1"]
+text = "4"
+
+[node name="Cooldown" type="TextureProgress" parent="HUD/BuildBar/Neutrophils"]
+margin_right = 40.0
+margin_bottom = 40.0
+rect_min_size = Vector2( 80, 80 )
+step = 0.1
+texture_progress = ExtResource( 4 )
+texture_progress_offset = Vector2( 6.952, 7.629 )
+fill_mode = 3
+tint_progress = Color( 1, 1, 1, 0.596078 )
+
+[node name="cooldown_timer" type="Timer" parent="HUD/BuildBar/Neutrophils"]
+one_shot = true
+
+[node name="TCell" parent="HUD/BuildBar" instance=ExtResource( 13 )]
+margin_left = 577.0
+margin_top = 10.0
+margin_right = 657.0
+margin_bottom = 90.0
+
+[node name="Icon" parent="HUD/BuildBar/TCell" index="0"]
+texture = ExtResource( 18 )
+
+[node name="CostLabel" parent="HUD/BuildBar/TCell" index="1"]
+text = "10"
+
+[node name="Cooldown" type="TextureProgress" parent="HUD/BuildBar/TCell"]
+margin_right = 40.0
+margin_bottom = 40.0
+rect_min_size = Vector2( 80, 80 )
+step = 0.1
+texture_progress = ExtResource( 4 )
+texture_progress_offset = Vector2( 6.952, 7.629 )
+fill_mode = 3
+tint_progress = Color( 1, 1, 1, 0.596078 )
+
+[node name="cooldown_timer" type="Timer" parent="HUD/BuildBar/TCell"]
+one_shot = true
+
+[node name="BCell" parent="HUD/BuildBar" instance=ExtResource( 13 )]
+margin_left = 682.0
+margin_top = 10.0
+margin_right = 762.0
+margin_bottom = 90.0
+
+[node name="Icon" parent="HUD/BuildBar/BCell" index="0"]
+texture = ExtResource( 17 )
+
+[node name="CostLabel" parent="HUD/BuildBar/BCell" index="1"]
+text = "6"
+
+[node name="Cooldown" type="TextureProgress" parent="HUD/BuildBar/BCell"]
+margin_right = 40.0
+margin_bottom = 40.0
+rect_min_size = Vector2( 80, 80 )
+step = 0.1
+texture_progress = ExtResource( 4 )
+texture_progress_offset = Vector2( 6.952, 7.629 )
+fill_mode = 3
+tint_progress = Color( 1, 1, 1, 0.596078 )
+
+[node name="cooldown_timer" type="Timer" parent="HUD/BuildBar/BCell"]
+one_shot = true
+
+[node name="GameControls" type="HBoxContainer" parent="HUD"]
+margin_left = 20.0
+margin_top = 60.0
+margin_right = 40.0
+margin_bottom = 40.0
+rect_min_size = Vector2( 980, 0 )
+
+[node name="SpeedUp" type="TextureButton" parent="HUD/GameControls"]
+margin_right = 70.0
+margin_bottom = 70.0
+rect_min_size = Vector2( 70, 70 )
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture_normal = ExtResource( 6 )
+expand = true
+
+[node name="Pause" type="TextureButton" parent="HUD/GameControls"]
+pause_mode = 2
+margin_left = 910.0
+margin_right = 980.0
+margin_bottom = 70.0
+rect_min_size = Vector2( 70, 70 )
+size_flags_horizontal = 10
+size_flags_vertical = 4
+toggle_mode = true
+texture_normal = ExtResource( 7 )
+expand = true
+
+[node name="ColorRect" type="ColorRect" parent="HUD"]
+self_modulate = Color( 0, 0, 0, 0.470588 )
+anchor_right = 1.0
+rect_min_size = Vector2( 0, 60 )
+
+[node name="H" type="HBoxContainer" parent="HUD/ColorRect"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="Symbol" type="Label" parent="HUD/ColorRect/H"]
+margin_right = 100.0
+margin_bottom = 60.0
+rect_min_size = Vector2( 100, 60 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 0.705882 )
+custom_fonts/font = ExtResource( 2 )
+text = "$"
+align = 1
+valign = 1
+
+[node name="Cash" type="Label" parent="HUD/ColorRect/H"]
+margin_left = 104.0
+margin_right = 190.0
+margin_bottom = 60.0
+rect_min_size = Vector2( 86, 60 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 0.705882 )
+custom_fonts/font = ExtResource( 1 )
+text = "100"
+valign = 1
+
+[node name="WaveText" type="Label" parent="HUD/ColorRect/H"]
+margin_left = 194.0
+margin_right = 319.0
+margin_bottom = 60.0
+rect_min_size = Vector2( 110, 60 )
+theme = SubResource( 7 )
+custom_colors/font_color = Color( 0.372549, 0.596078, 0.980392, 1 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 0.705882 )
+custom_fonts/font = SubResource( 8 )
+text = "wave : "
+valign = 1
+
+[node name="CurrentWave" type="Label" parent="HUD/ColorRect/H"]
+margin_left = 323.0
+margin_right = 363.0
+margin_bottom = 60.0
+rect_min_size = Vector2( 40, 60 )
+theme = SubResource( 7 )
+custom_colors/font_color = Color( 0.372549, 0.596078, 0.980392, 1 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 0.705882 )
+custom_fonts/font = SubResource( 8 )
+text = "..."
+valign = 1
+
+[node name="separator" type="Label" parent="HUD/ColorRect/H"]
+margin_left = 367.0
+margin_right = 387.0
+margin_bottom = 60.0
+rect_min_size = Vector2( 20, 60 )
+theme = SubResource( 7 )
+custom_colors/font_color = Color( 0.372549, 0.596078, 0.980392, 1 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 0.705882 )
+custom_fonts/font = SubResource( 8 )
+text = "/"
+valign = 1
+
+[node name="WaveSize" type="Label" parent="HUD/ColorRect/H"]
+margin_left = 391.0
+margin_right = 431.0
+margin_bottom = 60.0
+rect_min_size = Vector2( 40, 60 )
+theme = SubResource( 7 )
+custom_colors/font_color = Color( 0.372549, 0.596078, 0.980392, 1 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 0.705882 )
+custom_fonts/font = SubResource( 8 )
+text = "..."
+valign = 1
+
+[node name="Icon" type="TextureRect" parent="HUD/ColorRect/H"]
+margin_left = 486.0
+margin_right = 546.0
+margin_bottom = 60.0
+rect_min_size = Vector2( 60, 60 )
+size_flags_horizontal = 10
+texture = ExtResource( 9 )
+expand = true
+
+[node name="HP" type="TextureProgress" parent="HUD/ColorRect/H"]
+margin_left = 550.0
+margin_top = 15.0
+margin_right = 950.0
+margin_bottom = 45.0
+rect_min_size = Vector2( 400, 30 )
+size_flags_vertical = 4
+value = 100.0
+texture_under = ExtResource( 10 )
+texture_progress = ExtResource( 10 )
+tint_under = Color( 0.176471, 0.176471, 0.176471, 1 )
+tint_progress = Color( 0.305882, 1, 0.0823529, 1 )
+nine_patch_stretch = true
+
+[node name="Tween" type="Tween" parent="HUD/ColorRect/H/HP"]
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="HUD/ColorRect/H/HP"]
+anims/LowHp = SubResource( 4 )
+
+[node name="Control" type="Control" parent="HUD/ColorRect/H"]
+margin_left = 954.0
+margin_right = 1024.0
+margin_bottom = 60.0
+rect_min_size = Vector2( 70, 0 )
+
+[node name="CenterContainer" type="CenterContainer" parent="HUD"]
+anchor_right = 1.0
+margin_top = 61.0
+margin_bottom = 121.0
+mouse_filter = 2
+
+[node name="numOfWaveCh" type="Label" parent="HUD/CenterContainer"]
+margin_left = 492.0
+margin_right = 532.0
+margin_bottom = 60.0
+rect_min_size = Vector2( 40, 60 )
+custom_colors/font_color = Color( 0.172549, 0.376471, 0.729412, 1 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 0.705882 )
+custom_fonts/font = SubResource( 3 )
+text = "?"
+align = 1
+valign = 1
+
+[node name="WarningContainer" type="CenterContainer" parent="HUD"]
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+mouse_filter = 2
+
+[node name="WarningText" type="Label" parent="HUD/WarningContainer"]
+margin_left = 492.0
+margin_right = 532.0
+margin_bottom = 60.0
+rect_min_size = Vector2( 40, 60 )
+custom_colors/font_color = Color( 0.729412, 0.172549, 0.172549, 1 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 0.705882 )
+custom_fonts/font = SubResource( 5 )
+align = 1
+valign = 1
+
+[node name="StartButtonContainer" type="CenterContainer" parent="HUD"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+rect_min_size = Vector2( 100, 0 )
+
+[node name="StartButton" type="Button" parent="HUD/StartButtonContainer"]
+margin_left = 437.0
+margin_top = 270.0
+margin_right = 587.0
+margin_bottom = 330.0
+rect_min_size = Vector2( 150, 60 )
+theme = ExtResource( 5 )
+text = "Start"
+
+[connection signal="timeout" from="HUD/BuildBar/Complementary/cooldown_timer" to="." method="_on_complementary_cooldown_timer_timeout"]
+[connection signal="timeout" from="HUD/BuildBar/Macrophage/cooldown_timer" to="." method="_on_macrophage_cooldown_timer_timeout"]
+[connection signal="timeout" from="HUD/BuildBar/Neutrophils/cooldown_timer" to="." method="_on_neutrophils_cooldown_timer_timeout"]
+[connection signal="timeout" from="HUD/BuildBar/TCell/cooldown_timer" to="." method="_on_tcell_cooldown_timer_timeout"]
+[connection signal="timeout" from="HUD/BuildBar/BCell/cooldown_timer" to="." method="_on_bcell_cooldown_timer_timeout"]
+[connection signal="pressed" from="HUD/GameControls/SpeedUp" to="." method="_on_SpeedUp_pressed"]
+[connection signal="pressed" from="HUD/GameControls/Pause" to="." method="_on_Pause_pressed"]
+[connection signal="pressed" from="HUD/StartButtonContainer/StartButton" to="." method="_on_StartButton_pressed"]
+
+[editable path="HUD/BuildBar/Complementary"]
+[editable path="HUD/BuildBar/Macrophage"]
+[editable path="HUD/BuildBar/Neutrophils"]
+[editable path="HUD/BuildBar/TCell"]
+[editable path="HUD/BuildBar/BCell"]

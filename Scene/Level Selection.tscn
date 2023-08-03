@@ -1,0 +1,381 @@
+[gd_scene load_steps=12 format=2]
+
+[ext_resource path="res://Assets/UI/Buttons/red_button00.png" type="Texture" id=1]
+[ext_resource path="res://Assets/Font/Font Res/kenney future narrow.tres" type="DynamicFont" id=2]
+[ext_resource path="res://Assets/Font/Font Res/button_font.tres" type="DynamicFont" id=3]
+[ext_resource path="res://Scene/Level Selection.gd" type="Script" id=4]
+[ext_resource path="res://Assets/Icons/star.png" type="Texture" id=5]
+[ext_resource path="res://Assets/UI/Buttons/red_button_i_created.png" type="Texture" id=6]
+[ext_resource path="res://Assets/UI/Buttons/red_button_i_created_pressed.png" type="Texture" id=7]
+[ext_resource path="res://Assets/UI/Buttons/red_button02.png" type="Texture" id=8]
+[ext_resource path="res://Assets/Sound Effect/UI SFX/click1.ogg" type="AudioStream" id=9]
+[ext_resource path="res://SupportScene/kamalla_level_selections.tres" type="DynamicFont" id=10]
+
+[sub_resource type="StreamTexture" id=1]
+flags = 6
+load_path = "res://.import/main_menu_background_AI_art.png-84c85a18ecf6f1d72005f7cb3c8b6889.stex"
+
+[node name="Level Selection" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 4 )
+
+[node name="TextureRect" type="TextureRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+texture = SubResource( 1 )
+expand = true
+
+[node name="Container" type="VBoxContainer" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="MarginContainer" type="MarginContainer" parent="Container"]
+margin_right = 1024.0
+margin_bottom = 168.0
+custom_constants/margin_top = 20
+custom_constants/margin_bottom = 80
+
+[node name="Title Text" type="Label" parent="Container/MarginContainer"]
+margin_left = 225.0
+margin_top = 20.0
+margin_right = 799.0
+margin_bottom = 88.0
+size_flags_horizontal = 4
+custom_fonts/font = ExtResource( 2 )
+text = "Level Selection"
+
+[node name="Button Container" type="VBoxContainer" parent="Container"]
+margin_top = 172.0
+margin_right = 1024.0
+margin_bottom = 392.0
+size_flags_vertical = 4
+custom_constants/separation = 20
+
+[node name="TriButtonContainer" type="HBoxContainer" parent="Container/Button Container"]
+margin_left = 196.0
+margin_right = 828.0
+margin_bottom = 100.0
+size_flags_horizontal = 4
+custom_constants/separation = 16
+
+[node name="Level1" type="TextureButton" parent="Container/Button Container/TriButtonContainer" groups=["level_button"]]
+margin_right = 200.0
+margin_bottom = 100.0
+rect_min_size = Vector2( 200, 100 )
+size_flags_horizontal = 4
+texture_normal = ExtResource( 6 )
+texture_pressed = ExtResource( 7 )
+texture_disabled = ExtResource( 1 )
+expand = true
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Container/Button Container/TriButtonContainer/Level1"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="Label" type="Label" parent="Container/Button Container/TriButtonContainer/Level1/VBoxContainer"]
+margin_right = 200.0
+margin_bottom = 50.0
+rect_min_size = Vector2( 0, 50 )
+custom_colors/font_color = Color( 0.996078, 1, 0.329412, 1 )
+custom_colors/font_color_shadow = Color( 0.788235, 0, 0.721569, 0.266667 )
+custom_constants/shadow_offset_x = 2
+custom_fonts/font = ExtResource( 10 )
+text = "Level 1"
+align = 1
+valign = 2
+
+[node name="StarsContainer" type="HBoxContainer" parent="Container/Button Container/TriButtonContainer/Level1"]
+margin_left = 21.0
+margin_top = 44.0
+margin_right = 179.0
+margin_bottom = 94.0
+size_flags_horizontal = 4
+
+[node name="Star1" type="TextureRect" parent="Container/Button Container/TriButtonContainer/Level1/StarsContainer"]
+modulate = Color( 0.482353, 0.482353, 0.482353, 1 )
+margin_right = 50.0
+margin_bottom = 50.0
+texture = ExtResource( 5 )
+
+[node name="Star2" type="TextureRect" parent="Container/Button Container/TriButtonContainer/Level1/StarsContainer"]
+modulate = Color( 0.482353, 0.482353, 0.482353, 1 )
+margin_left = 54.0
+margin_right = 104.0
+margin_bottom = 50.0
+texture = ExtResource( 5 )
+
+[node name="Star3" type="TextureRect" parent="Container/Button Container/TriButtonContainer/Level1/StarsContainer"]
+modulate = Color( 0.482353, 0.482353, 0.482353, 1 )
+margin_left = 108.0
+margin_right = 158.0
+margin_bottom = 50.0
+texture = ExtResource( 5 )
+
+[node name="Level2" type="TextureButton" parent="Container/Button Container/TriButtonContainer" groups=["level_button"]]
+margin_left = 216.0
+margin_right = 416.0
+margin_bottom = 100.0
+rect_min_size = Vector2( 200, 64 )
+size_flags_horizontal = 4
+texture_normal = ExtResource( 6 )
+texture_pressed = ExtResource( 7 )
+texture_disabled = ExtResource( 1 )
+expand = true
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Container/Button Container/TriButtonContainer/Level2"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="Label" type="Label" parent="Container/Button Container/TriButtonContainer/Level2/VBoxContainer"]
+margin_right = 200.0
+margin_bottom = 50.0
+rect_min_size = Vector2( 0, 50 )
+custom_colors/font_color = Color( 0.996078, 1, 0.329412, 1 )
+custom_colors/font_color_shadow = Color( 0.788235, 0, 0.721569, 0.266667 )
+custom_constants/shadow_offset_x = 2
+custom_fonts/font = ExtResource( 10 )
+text = "Level 2"
+align = 1
+valign = 2
+
+[node name="StarsContainer" type="HBoxContainer" parent="Container/Button Container/TriButtonContainer/Level2"]
+margin_left = 21.0
+margin_top = 44.0
+margin_right = 179.0
+margin_bottom = 94.0
+size_flags_horizontal = 4
+
+[node name="Star1" type="TextureRect" parent="Container/Button Container/TriButtonContainer/Level2/StarsContainer"]
+modulate = Color( 0.482353, 0.482353, 0.482353, 1 )
+margin_right = 50.0
+margin_bottom = 50.0
+texture = ExtResource( 5 )
+
+[node name="Star2" type="TextureRect" parent="Container/Button Container/TriButtonContainer/Level2/StarsContainer"]
+modulate = Color( 0.482353, 0.482353, 0.482353, 1 )
+margin_left = 54.0
+margin_right = 104.0
+margin_bottom = 50.0
+texture = ExtResource( 5 )
+
+[node name="Star3" type="TextureRect" parent="Container/Button Container/TriButtonContainer/Level2/StarsContainer"]
+modulate = Color( 0.482353, 0.482353, 0.482353, 1 )
+margin_left = 108.0
+margin_right = 158.0
+margin_bottom = 50.0
+texture = ExtResource( 5 )
+
+[node name="Level3" type="TextureButton" parent="Container/Button Container/TriButtonContainer" groups=["level_button"]]
+margin_left = 432.0
+margin_right = 632.0
+margin_bottom = 100.0
+rect_min_size = Vector2( 200, 64 )
+rect_pivot_offset = Vector2( -674, -96 )
+size_flags_horizontal = 4
+texture_normal = ExtResource( 6 )
+texture_pressed = ExtResource( 7 )
+texture_disabled = ExtResource( 1 )
+expand = true
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Container/Button Container/TriButtonContainer/Level3"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="Label" type="Label" parent="Container/Button Container/TriButtonContainer/Level3/VBoxContainer"]
+margin_right = 200.0
+margin_bottom = 50.0
+rect_min_size = Vector2( 0, 50 )
+custom_colors/font_color = Color( 0.996078, 1, 0.329412, 1 )
+custom_colors/font_color_shadow = Color( 0.788235, 0, 0.721569, 0.266667 )
+custom_constants/shadow_offset_x = 2
+custom_fonts/font = ExtResource( 10 )
+text = "Level 3"
+align = 1
+valign = 2
+
+[node name="StarsContainer" type="HBoxContainer" parent="Container/Button Container/TriButtonContainer/Level3"]
+margin_left = 21.0
+margin_top = 44.0
+margin_right = 179.0
+margin_bottom = 94.0
+size_flags_horizontal = 4
+
+[node name="Star1" type="TextureRect" parent="Container/Button Container/TriButtonContainer/Level3/StarsContainer"]
+modulate = Color( 0.482353, 0.482353, 0.482353, 1 )
+margin_right = 50.0
+margin_bottom = 50.0
+texture = ExtResource( 5 )
+
+[node name="Star2" type="TextureRect" parent="Container/Button Container/TriButtonContainer/Level3/StarsContainer"]
+modulate = Color( 0.482353, 0.482353, 0.482353, 1 )
+margin_left = 54.0
+margin_right = 104.0
+margin_bottom = 50.0
+texture = ExtResource( 5 )
+
+[node name="Star3" type="TextureRect" parent="Container/Button Container/TriButtonContainer/Level3/StarsContainer"]
+modulate = Color( 0.482353, 0.482353, 0.482353, 1 )
+margin_left = 108.0
+margin_right = 158.0
+margin_bottom = 50.0
+texture = ExtResource( 5 )
+
+[node name="TriButtonContainer2" type="HBoxContainer" parent="Container/Button Container"]
+margin_left = 304.0
+margin_top = 120.0
+margin_right = 720.0
+margin_bottom = 220.0
+size_flags_horizontal = 4
+custom_constants/separation = 16
+
+[node name="Level4" type="TextureButton" parent="Container/Button Container/TriButtonContainer2" groups=["level_button"]]
+margin_right = 200.0
+margin_bottom = 100.0
+rect_min_size = Vector2( 200, 100 )
+rect_pivot_offset = Vector2( -674, -96 )
+size_flags_horizontal = 4
+texture_normal = ExtResource( 6 )
+texture_pressed = ExtResource( 7 )
+texture_disabled = ExtResource( 1 )
+expand = true
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Container/Button Container/TriButtonContainer2/Level4"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="Label" type="Label" parent="Container/Button Container/TriButtonContainer2/Level4/VBoxContainer"]
+margin_right = 200.0
+margin_bottom = 50.0
+rect_min_size = Vector2( 0, 50 )
+custom_colors/font_color = Color( 0.996078, 1, 0.329412, 1 )
+custom_colors/font_color_shadow = Color( 0.788235, 0, 0.721569, 0.266667 )
+custom_constants/shadow_offset_x = 2
+custom_fonts/font = ExtResource( 10 )
+text = "Level 4"
+align = 1
+valign = 2
+
+[node name="StarsContainer" type="HBoxContainer" parent="Container/Button Container/TriButtonContainer2/Level4"]
+margin_left = 21.0
+margin_top = 44.0
+margin_right = 179.0
+margin_bottom = 94.0
+size_flags_horizontal = 4
+
+[node name="Star1" type="TextureRect" parent="Container/Button Container/TriButtonContainer2/Level4/StarsContainer"]
+modulate = Color( 0.482353, 0.482353, 0.482353, 1 )
+margin_right = 50.0
+margin_bottom = 50.0
+texture = ExtResource( 5 )
+
+[node name="Star2" type="TextureRect" parent="Container/Button Container/TriButtonContainer2/Level4/StarsContainer"]
+modulate = Color( 0.482353, 0.482353, 0.482353, 1 )
+margin_left = 54.0
+margin_right = 104.0
+margin_bottom = 50.0
+texture = ExtResource( 5 )
+
+[node name="Star3" type="TextureRect" parent="Container/Button Container/TriButtonContainer2/Level4/StarsContainer"]
+modulate = Color( 0.482353, 0.482353, 0.482353, 1 )
+margin_left = 108.0
+margin_right = 158.0
+margin_bottom = 50.0
+texture = ExtResource( 5 )
+
+[node name="Level5" type="TextureButton" parent="Container/Button Container/TriButtonContainer2" groups=["level_button"]]
+margin_left = 216.0
+margin_right = 416.0
+margin_bottom = 100.0
+rect_min_size = Vector2( 200, 64 )
+rect_pivot_offset = Vector2( -674, -96 )
+size_flags_horizontal = 4
+texture_normal = ExtResource( 6 )
+texture_pressed = ExtResource( 7 )
+texture_disabled = ExtResource( 1 )
+expand = true
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Container/Button Container/TriButtonContainer2/Level5"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="Label" type="Label" parent="Container/Button Container/TriButtonContainer2/Level5/VBoxContainer"]
+margin_right = 200.0
+margin_bottom = 50.0
+rect_min_size = Vector2( 0, 50 )
+custom_colors/font_color = Color( 0.996078, 1, 0.329412, 1 )
+custom_colors/font_color_shadow = Color( 0.788235, 0, 0.721569, 0.266667 )
+custom_constants/shadow_offset_x = 2
+custom_fonts/font = ExtResource( 10 )
+text = "Level 5"
+align = 1
+valign = 2
+
+[node name="StarsContainer" type="HBoxContainer" parent="Container/Button Container/TriButtonContainer2/Level5"]
+margin_left = 21.0
+margin_top = 44.0
+margin_right = 179.0
+margin_bottom = 94.0
+size_flags_horizontal = 4
+
+[node name="Star1" type="TextureRect" parent="Container/Button Container/TriButtonContainer2/Level5/StarsContainer"]
+modulate = Color( 0.482353, 0.482353, 0.482353, 1 )
+margin_right = 50.0
+margin_bottom = 50.0
+texture = ExtResource( 5 )
+
+[node name="Star2" type="TextureRect" parent="Container/Button Container/TriButtonContainer2/Level5/StarsContainer"]
+modulate = Color( 0.482353, 0.482353, 0.482353, 1 )
+margin_left = 54.0
+margin_right = 104.0
+margin_bottom = 50.0
+texture = ExtResource( 5 )
+
+[node name="Star3" type="TextureRect" parent="Container/Button Container/TriButtonContainer2/Level5/StarsContainer"]
+modulate = Color( 0.482353, 0.482353, 0.482353, 1 )
+margin_left = 108.0
+margin_right = 158.0
+margin_bottom = 50.0
+texture = ExtResource( 5 )
+
+[node name="ButtonSFX" type="AudioStreamPlayer" parent="." groups=["sfx"]]
+stream = ExtResource( 9 )
+
+[node name="MarginContainer2" type="MarginContainer" parent="."]
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = -74.0
+size_flags_vertical = 3
+custom_constants/margin_top = 10
+custom_constants/margin_left = 20
+
+[node name="BackButton" type="TextureButton" parent="MarginContainer2"]
+margin_left = 20.0
+margin_top = 10.0
+margin_right = 220.0
+margin_bottom = 74.0
+rect_min_size = Vector2( 200, 64 )
+size_flags_horizontal = 0
+size_flags_vertical = 0
+texture_normal = ExtResource( 1 )
+texture_pressed = ExtResource( 8 )
+expand = true
+
+[node name="Label" type="Label" parent="MarginContainer2/BackButton"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_colors/font_color = Color( 0.772549, 0.0313726, 0.0313726, 1 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 0.419608 )
+custom_constants/shadow_offset_x = 2
+custom_fonts/font = ExtResource( 3 )
+text = "Back"
+align = 1
+valign = 1
+
+[connection signal="pressed" from="Container/Button Container/TriButtonContainer/Level1" to="." method="_on_Level1_pressed"]
+[connection signal="pressed" from="Container/Button Container/TriButtonContainer/Level2" to="." method="_on_Level2_pressed"]
+[connection signal="pressed" from="Container/Button Container/TriButtonContainer/Level3" to="." method="_on_Level3_pressed"]
+[connection signal="pressed" from="Container/Button Container/TriButtonContainer2/Level4" to="." method="_on_Level4_pressed"]
+[connection signal="pressed" from="Container/Button Container/TriButtonContainer2/Level5" to="." method="_on_Level5_pressed"]
+[connection signal="pressed" from="MarginContainer2/BackButton" to="." method="_on_BackButton_pressed"]

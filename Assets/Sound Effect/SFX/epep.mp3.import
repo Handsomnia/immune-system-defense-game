@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/epep.mp3-56e2b56225027b4cde361224e39a2ab2.mp3str"
+
+[deps]
+
+source_file="res://Assets/Sound Effect/SFX/epep.mp3"
+dest_files=[ "res://.import/epep.mp3-56e2b56225027b4cde361224e39a2ab2.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

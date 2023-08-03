@@ -1,0 +1,26 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Assets/Effect/Texture Light/spotlight_1.png" type="Texture" id=1]
+
+[sub_resource type="CanvasItemMaterial" id=1]
+blend_mode = 1
+
+[sub_resource type="Curve" id=2]
+_data = [ Vector2( 0, 0.522901 ), 0.0, 0.0, 0, 0, Vector2( 1, 0 ), 0.0, 0.0, 0, 0 ]
+
+[sub_resource type="Gradient" id=3]
+offsets = PoolRealArray( 0, 0.0728477 )
+colors = PoolColorArray( 1, 1, 1, 1, 0.4375, 0.4375, 0.4375, 1 )
+
+[node name="CPU Spread Particles" type="CPUParticles2D"]
+material = SubResource( 1 )
+amount = 4
+lifetime = 0.4
+lifetime_randomness = 0.23
+texture = ExtResource( 1 )
+emission_shape = 2
+emission_rect_extents = Vector2( 1, 1 )
+initial_velocity = 120.0
+scale_amount = 0.94
+scale_amount_curve = SubResource( 2 )
+color_ramp = SubResource( 3 )

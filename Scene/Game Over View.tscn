@@ -1,0 +1,67 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Assets/Font/Font Res/kenney future narrow.tres" type="DynamicFont" id=1]
+[ext_resource path="res://test/mobile_game_theme.tres" type="Theme" id=2]
+[ext_resource path="res://Scene/Game Over View.gd" type="Script" id=3]
+
+[node name="Game Over View" type="Control"]
+pause_mode = 2
+anchor_right = 1.0
+anchor_bottom = 1.0
+theme = ExtResource( 2 )
+script = ExtResource( 3 )
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer"]
+margin_right = 1024.0
+margin_bottom = 188.0
+custom_constants/margin_top = 20
+custom_constants/margin_bottom = 100
+
+[node name="Label" type="Label" parent="VBoxContainer/MarginContainer"]
+margin_top = 20.0
+margin_right = 1024.0
+margin_bottom = 88.0
+custom_fonts/font = ExtResource( 1 )
+text = "Game Over"
+align = 1
+
+[node name="ButtonContainer" type="VBoxContainer" parent="VBoxContainer"]
+margin_top = 192.0
+margin_right = 1024.0
+margin_bottom = 376.0
+custom_constants/separation = 8
+
+[node name="RetryButton" type="Button" parent="VBoxContainer/ButtonContainer"]
+margin_left = 312.0
+margin_right = 712.0
+margin_bottom = 56.0
+rect_min_size = Vector2( 400, 0 )
+size_flags_horizontal = 4
+text = "Retry"
+
+[node name="LevelSelectionButton" type="Button" parent="VBoxContainer/ButtonContainer"]
+margin_left = 312.0
+margin_top = 64.0
+margin_right = 712.0
+margin_bottom = 120.0
+rect_min_size = Vector2( 400, 0 )
+size_flags_horizontal = 4
+text = "Level Selection"
+
+[node name="MainMenuButton" type="Button" parent="VBoxContainer/ButtonContainer"]
+pause_mode = 2
+margin_left = 312.0
+margin_top = 128.0
+margin_right = 712.0
+margin_bottom = 184.0
+rect_min_size = Vector2( 400, 0 )
+size_flags_horizontal = 4
+text = "Main Menu"
+
+[connection signal="pressed" from="VBoxContainer/ButtonContainer/RetryButton" to="." method="_on_RetryButton_pressed"]
+[connection signal="pressed" from="VBoxContainer/ButtonContainer/LevelSelectionButton" to="." method="_on_LevelSelectionButton_pressed"]
+[connection signal="pressed" from="VBoxContainer/ButtonContainer/MainMenuButton" to="." method="_on_MainMenuButton_pressed"]

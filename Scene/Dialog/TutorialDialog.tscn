@@ -1,0 +1,746 @@
+[gd_scene load_steps=26 format=2]
+
+[ext_resource path="res://Assets/Font/Kenney Future Narrow.ttf" type="DynamicFontData" id=1]
+[ext_resource path="res://Assets/brain_tutorial_instructor.png" type="Texture" id=2]
+[ext_resource path="res://Assets/UI/Buttons/yellow_button03.png" type="Texture" id=3]
+[ext_resource path="res://Assets/UI/Buttons/yellow_button05.png" type="Texture" id=4]
+[ext_resource path="res://Scene/Dialog/TutorialDialog.gd" type="Script" id=5]
+[ext_resource path="res://Crud Asset/frame.png" type="Texture" id=6]
+[ext_resource path="res://Crud Asset/Neutrophills_02.png" type="Texture" id=7]
+[ext_resource path="res://Crud Asset/macrophage_02.png" type="Texture" id=8]
+[ext_resource path="res://Crud Asset/BCell.png" type="Texture" id=9]
+[ext_resource path="res://icon.png" type="Texture" id=10]
+[ext_resource path="res://Crud Asset/dendritic_cell.png" type="Texture" id=11]
+[ext_resource path="res://Crud Asset/Tcell.png" type="Texture" id=12]
+[ext_resource path="res://Assets/placing_64x64x1-3-white.png" type="Texture" id=13]
+[ext_resource path="res://Assets/this_to_this_straight2.png" type="Texture" id=14]
+[ext_resource path="res://Assets/upgrade_and_sell.png" type="Texture" id=15]
+[ext_resource path="res://Assets/Font/Kamalla.ttf" type="DynamicFontData" id=16]
+[ext_resource path="res://Assets/Font/Seek Truth.ttf" type="DynamicFontData" id=17]
+[ext_resource path="res://Crud Asset/Complementary.png" type="Texture" id=18]
+
+[sub_resource type="DynamicFont" id=1]
+size = 15
+outline_size = 3
+outline_color = Color( 0.137255, 0.254902, 0.784314, 1 )
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 50
+outline_size = 2
+outline_color = Color( 0.537255, 0, 0.529412, 1 )
+extra_spacing_char = 10
+font_data = ExtResource( 17 )
+
+[sub_resource type="DynamicFont" id=3]
+size = 35
+outline_size = 2
+outline_color = Color( 0.376471, 0.929412, 0, 1 )
+extra_spacing_char = 10
+font_data = ExtResource( 17 )
+
+[sub_resource type="DynamicFont" id=4]
+size = 45
+outline_size = 1
+outline_color = Color( 0.611765, 0.12549, 0.666667, 1 )
+extra_spacing_char = 4
+font_data = ExtResource( 16 )
+
+[sub_resource type="DynamicFont" id=5]
+size = 40
+outline_size = 2
+outline_color = Color( 0.537255, 0, 0.529412, 1 )
+extra_spacing_char = 10
+font_data = ExtResource( 17 )
+
+[sub_resource type="DynamicFont" id=6]
+size = 40
+outline_size = 1
+outline_color = Color( 0.611765, 0.12549, 0.666667, 1 )
+extra_spacing_char = 4
+font_data = ExtResource( 16 )
+
+[sub_resource type="DynamicFont" id=7]
+size = 45
+outline_size = 1
+outline_color = Color( 0.611765, 0.12549, 0.666667, 1 )
+extra_spacing_char = 4
+font_data = ExtResource( 16 )
+
+[node name="TutorialDialog" type="Popup"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+popup_exclusive = true
+script = ExtResource( 5 )
+
+[node name="BgHolder1" type="VBoxContainer" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+size_flags_vertical = 10
+
+[node name="ColorRect" type="ColorRect" parent="BgHolder1"]
+visible = false
+show_behind_parent = true
+margin_top = 368.0
+margin_right = 1024.0
+margin_bottom = 600.0
+rect_min_size = Vector2( 1024, 232 )
+rect_clip_content = true
+size_flags_vertical = 10
+color = Color( 0.584314, 0.584314, 0.584314, 0.784314 )
+
+[node name="ColorRect2" type="ColorRect" parent="BgHolder1"]
+visible = false
+show_behind_parent = true
+margin_right = 1024.0
+margin_bottom = 600.0
+rect_min_size = Vector2( 1024, 600 )
+rect_clip_content = true
+color = Color( 0.180392, 0.180392, 0.180392, 0.670588 )
+
+[node name="BuildBar" type="HBoxContainer" parent="."]
+visible = false
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = -512.0
+margin_top = -100.0
+margin_right = 512.0
+rect_min_size = Vector2( 400, 100 )
+mouse_filter = 2
+custom_constants/separation = 25
+alignment = 1
+
+[node name="Complementary" type="TextureButton" parent="BuildBar" groups=["build_buttons"]]
+margin_left = 262.0
+margin_top = 10.0
+margin_right = 342.0
+margin_bottom = 90.0
+rect_min_size = Vector2( 80, 80 )
+size_flags_horizontal = 4
+size_flags_vertical = 4
+disabled = true
+texture_normal = ExtResource( 6 )
+expand = true
+
+[node name="Icon" type="TextureRect" parent="BuildBar/Complementary"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 10.0
+margin_top = 10.0
+margin_right = -6.0
+margin_bottom = -10.0
+rect_pivot_offset = Vector2( 32, 32 )
+texture = ExtResource( 18 )
+
+[node name="CostLabel" type="Label" parent="BuildBar/Complementary"]
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -28.0
+margin_top = -24.0
+margin_right = 12.0
+margin_bottom = -6.0
+custom_fonts/font = SubResource( 1 )
+text = "6"
+align = 1
+
+[node name="Cooldown" type="TextureProgress" parent="BuildBar/Complementary"]
+margin_right = 40.0
+margin_bottom = 40.0
+rect_min_size = Vector2( 80, 80 )
+texture_progress = ExtResource( 10 )
+texture_progress_offset = Vector2( 6.952, 7.629 )
+fill_mode = 3
+tint_progress = Color( 1, 1, 1, 0.596078 )
+
+[node name="Macrophage" type="TextureButton" parent="BuildBar" groups=["build_buttons"]]
+modulate = Color( 1, 1, 1, 0 )
+margin_left = 367.0
+margin_top = 10.0
+margin_right = 447.0
+margin_bottom = 90.0
+rect_min_size = Vector2( 80, 80 )
+size_flags_horizontal = 4
+size_flags_vertical = 4
+disabled = true
+texture_normal = ExtResource( 6 )
+expand = true
+
+[node name="Icon" type="TextureRect" parent="BuildBar/Macrophage"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 10.0
+margin_top = 10.0
+margin_right = -6.0
+margin_bottom = -10.0
+rect_rotation = -90.0
+rect_pivot_offset = Vector2( 32, 32 )
+texture = ExtResource( 8 )
+
+[node name="CostLabel" type="Label" parent="BuildBar/Macrophage"]
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -28.0
+margin_top = -24.0
+margin_right = 12.0
+margin_bottom = -6.0
+custom_fonts/font = SubResource( 1 )
+text = "5"
+align = 1
+
+[node name="Cooldown" type="TextureProgress" parent="BuildBar/Macrophage"]
+margin_right = 40.0
+margin_bottom = 40.0
+rect_min_size = Vector2( 80, 80 )
+texture_progress = ExtResource( 10 )
+texture_progress_offset = Vector2( 6.952, 7.629 )
+fill_mode = 3
+tint_progress = Color( 1, 1, 1, 0.596078 )
+
+[node name="Neutrophils" type="TextureButton" parent="BuildBar" groups=["build_buttons"]]
+modulate = Color( 1, 1, 1, 0 )
+margin_left = 472.0
+margin_top = 10.0
+margin_right = 552.0
+margin_bottom = 90.0
+rect_min_size = Vector2( 80, 80 )
+size_flags_horizontal = 4
+size_flags_vertical = 4
+disabled = true
+texture_normal = ExtResource( 6 )
+expand = true
+
+[node name="Icon" type="TextureRect" parent="BuildBar/Neutrophils"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 10.0
+margin_top = 10.0
+margin_right = -6.0
+margin_bottom = -10.0
+rect_rotation = -90.0
+rect_pivot_offset = Vector2( 32, 32 )
+texture = ExtResource( 7 )
+
+[node name="CostLabel" type="Label" parent="BuildBar/Neutrophils"]
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -28.0
+margin_top = -24.0
+margin_right = 12.0
+margin_bottom = -6.0
+custom_fonts/font = SubResource( 1 )
+text = "3"
+align = 1
+
+[node name="Cooldown" type="TextureProgress" parent="BuildBar/Neutrophils"]
+margin_right = 40.0
+margin_bottom = 40.0
+rect_min_size = Vector2( 80, 80 )
+texture_progress = ExtResource( 10 )
+texture_progress_offset = Vector2( 6.952, 7.629 )
+fill_mode = 3
+tint_progress = Color( 1, 1, 1, 0.596078 )
+
+[node name="TCell" type="TextureButton" parent="BuildBar" groups=["build_buttons"]]
+modulate = Color( 1, 1, 1, 0 )
+margin_left = 577.0
+margin_top = 10.0
+margin_right = 657.0
+margin_bottom = 90.0
+rect_min_size = Vector2( 80, 80 )
+size_flags_horizontal = 4
+size_flags_vertical = 4
+disabled = true
+texture_normal = ExtResource( 6 )
+expand = true
+
+[node name="Icon" type="TextureRect" parent="BuildBar/TCell"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 10.0
+margin_top = 10.0
+margin_right = -6.0
+margin_bottom = -10.0
+rect_rotation = -90.0
+rect_pivot_offset = Vector2( 32, 32 )
+texture = ExtResource( 12 )
+
+[node name="CostLabel" type="Label" parent="BuildBar/TCell"]
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -28.0
+margin_top = -24.0
+margin_right = 12.0
+margin_bottom = -6.0
+custom_fonts/font = SubResource( 1 )
+text = "10"
+align = 1
+
+[node name="Cooldown" type="TextureProgress" parent="BuildBar/TCell"]
+margin_right = 40.0
+margin_bottom = 40.0
+rect_min_size = Vector2( 80, 80 )
+texture_progress = ExtResource( 10 )
+texture_progress_offset = Vector2( 6.952, 7.629 )
+fill_mode = 3
+tint_progress = Color( 1, 1, 1, 0.596078 )
+
+[node name="BCell" type="TextureButton" parent="BuildBar" groups=["build_buttons"]]
+modulate = Color( 1, 1, 1, 0 )
+margin_left = 682.0
+margin_top = 10.0
+margin_right = 762.0
+margin_bottom = 90.0
+rect_min_size = Vector2( 80, 80 )
+size_flags_horizontal = 4
+size_flags_vertical = 4
+disabled = true
+texture_normal = ExtResource( 6 )
+expand = true
+
+[node name="Icon" type="TextureRect" parent="BuildBar/BCell"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 10.0
+margin_top = 10.0
+margin_right = -6.0
+margin_bottom = -10.0
+rect_rotation = -90.0
+rect_pivot_offset = Vector2( 32, 32 )
+texture = ExtResource( 9 )
+
+[node name="CostLabel" type="Label" parent="BuildBar/BCell"]
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -28.0
+margin_top = -24.0
+margin_right = 12.0
+margin_bottom = -6.0
+custom_fonts/font = SubResource( 1 )
+text = "2"
+align = 1
+
+[node name="Cooldown" type="TextureProgress" parent="BuildBar/BCell"]
+margin_right = 40.0
+margin_bottom = 40.0
+rect_min_size = Vector2( 80, 80 )
+texture_progress = ExtResource( 10 )
+texture_progress_offset = Vector2( 6.952, 7.629 )
+fill_mode = 3
+tint_progress = Color( 1, 1, 1, 0.596078 )
+
+[node name="TowerInfoContainer" type="VBoxContainer" parent="."]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="MarginContainer" type="MarginContainer" parent="TowerInfoContainer"]
+margin_right = 1024.0
+margin_bottom = 107.0
+custom_constants/margin_top = 51
+
+[node name="Title" type="Label" parent="TowerInfoContainer/MarginContainer"]
+margin_top = 51.0
+margin_right = 1024.0
+margin_bottom = 107.0
+custom_fonts/font = SubResource( 2 )
+text = "Informasi tower"
+align = 1
+valign = 1
+
+[node name="HSeparator" type="HSeparator" parent="TowerInfoContainer"]
+margin_top = 111.0
+margin_right = 1024.0
+margin_bottom = 146.0
+custom_constants/separation = 35
+
+[node name="TowerName" type="Label" parent="TowerInfoContainer"]
+margin_top = 150.0
+margin_right = 1024.0
+margin_bottom = 190.0
+custom_fonts/font = SubResource( 3 )
+text = "Complementary Cell"
+align = 1
+valign = 1
+
+[node name="Info1" type="HBoxContainer" parent="TowerInfoContainer"]
+margin_left = 239.0
+margin_top = 194.0
+margin_right = 784.0
+margin_bottom = 240.0
+size_flags_horizontal = 4
+
+[node name="Row1" type="Label" parent="TowerInfoContainer/Info1"]
+margin_right = 208.0
+margin_bottom = 46.0
+rect_min_size = Vector2( 160, 0 )
+custom_fonts/font = SubResource( 4 )
+text = "Kemampuan"
+valign = 1
+
+[node name="Row3" type="Label" parent="TowerInfoContainer/Info1"]
+margin_left = 212.0
+margin_right = 249.0
+margin_bottom = 46.0
+custom_fonts/font = SubResource( 4 )
+text = " : "
+align = 1
+valign = 1
+
+[node name="Row2" type="Label" parent="TowerInfoContainer/Info1"]
+margin_left = 253.0
+margin_right = 545.0
+margin_bottom = 46.0
+rect_min_size = Vector2( 260, 0 )
+custom_fonts/font = SubResource( 4 )
+text = "Kerusakan kecil"
+valign = 1
+
+[node name="Info2" type="HBoxContainer" parent="TowerInfoContainer"]
+margin_left = 279.0
+margin_top = 244.0
+margin_right = 744.0
+margin_bottom = 290.0
+size_flags_horizontal = 4
+
+[node name="Row1" type="Label" parent="TowerInfoContainer/Info2"]
+margin_right = 160.0
+margin_bottom = 46.0
+rect_min_size = Vector2( 160, 0 )
+custom_fonts/font = SubResource( 4 )
+text = "Cost"
+valign = 1
+
+[node name="Row3" type="Label" parent="TowerInfoContainer/Info2"]
+margin_left = 164.0
+margin_right = 201.0
+margin_bottom = 46.0
+custom_fonts/font = SubResource( 4 )
+text = " : "
+align = 1
+valign = 1
+
+[node name="Row2" type="Label" parent="TowerInfoContainer/Info2"]
+margin_left = 205.0
+margin_right = 465.0
+margin_bottom = 46.0
+rect_min_size = Vector2( 260, 0 )
+custom_fonts/font = SubResource( 4 )
+text = "$ 10"
+valign = 1
+
+[node name="Info3" type="HBoxContainer" parent="TowerInfoContainer"]
+margin_left = 279.0
+margin_top = 294.0
+margin_right = 744.0
+margin_bottom = 340.0
+size_flags_horizontal = 4
+
+[node name="Row1" type="Label" parent="TowerInfoContainer/Info3"]
+margin_right = 160.0
+margin_bottom = 46.0
+rect_min_size = Vector2( 160, 0 )
+custom_fonts/font = SubResource( 4 )
+text = "Tipe"
+valign = 1
+
+[node name="Row3" type="Label" parent="TowerInfoContainer/Info3"]
+margin_left = 164.0
+margin_right = 201.0
+margin_bottom = 46.0
+custom_fonts/font = SubResource( 4 )
+text = " : "
+align = 1
+valign = 1
+
+[node name="Row2" type="Label" parent="TowerInfoContainer/Info3"]
+margin_left = 205.0
+margin_right = 465.0
+margin_bottom = 46.0
+rect_min_size = Vector2( 260, 0 )
+custom_fonts/font = SubResource( 4 )
+text = "Target tunggal"
+valign = 1
+
+[node name="DialogContainer" type="HBoxContainer" parent="."]
+visible = false
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = -234.0
+margin_bottom = -2.0
+rect_min_size = Vector2( 1024, 232 )
+size_flags_vertical = 10
+
+[node name="InstructorImage" type="TextureRect" parent="DialogContainer"]
+show_behind_parent = true
+margin_top = 53.0
+margin_right = 256.0
+margin_bottom = 196.0
+size_flags_vertical = 4
+texture = ExtResource( 2 )
+
+[node name="VBoxContainer" type="VBoxContainer" parent="DialogContainer"]
+margin_left = 260.0
+margin_right = 1024.0
+margin_bottom = 250.0
+size_flags_horizontal = 3
+custom_constants/separation = 36
+
+[node name="NameLabel" type="Label" parent="DialogContainer/VBoxContainer"]
+margin_right = 194.0
+margin_bottom = 45.0
+size_flags_horizontal = 0
+size_flags_vertical = 1
+custom_fonts/font = SubResource( 5 )
+text = "Mr. Brain"
+
+[node name="TutorialText" type="Label" parent="DialogContainer/VBoxContainer"]
+margin_left = 22.0
+margin_top = 81.0
+margin_right = 764.0
+margin_bottom = 250.0
+rect_min_size = Vector2( 742, 0 )
+size_flags_horizontal = 8
+size_flags_vertical = 1
+custom_fonts/font = SubResource( 6 )
+text = "Halo, selamat datang di Sistem Imun Defense,
+jlahlah
+"
+autowrap = true
+
+[node name="MenempatkanTower" type="VBoxContainer" parent="."]
+visible = false
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -256.0
+margin_right = 256.0
+margin_bottom = 297.0
+size_flags_horizontal = 0
+custom_constants/separation = 50
+
+[node name="TitleContainer" type="MarginContainer" parent="MenempatkanTower"]
+margin_left = 12.0
+margin_right = 499.0
+margin_bottom = 140.0
+size_flags_horizontal = 4
+custom_constants/margin_top = 24
+custom_constants/margin_bottom = 60
+
+[node name="Title" type="Label" parent="MenempatkanTower/TitleContainer"]
+margin_top = 24.0
+margin_right = 487.0
+margin_bottom = 80.0
+custom_fonts/font = SubResource( 2 )
+text = "Menempatkan Tower"
+align = 1
+
+[node name="Content1" type="HBoxContainer" parent="MenempatkanTower"]
+margin_top = 190.0
+margin_right = 512.0
+margin_bottom = 273.0
+
+[node name="Complementary" type="TextureButton" parent="MenempatkanTower/Content1" groups=["build_buttons"]]
+margin_top = 1.0
+margin_right = 80.0
+margin_bottom = 81.0
+rect_min_size = Vector2( 80, 80 )
+rect_pivot_offset = Vector2( 401, 40 )
+size_flags_horizontal = 2
+size_flags_vertical = 4
+disabled = true
+texture_normal = ExtResource( 6 )
+expand = true
+
+[node name="Icon" type="TextureRect" parent="MenempatkanTower/Content1/Complementary"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 10.0
+margin_top = 10.0
+margin_right = -6.0
+margin_bottom = -10.0
+rect_rotation = -90.0
+rect_pivot_offset = Vector2( 32, 32 )
+texture = ExtResource( 11 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CostLabel" type="Label" parent="MenempatkanTower/Content1/Complementary"]
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -28.0
+margin_top = -24.0
+margin_right = 12.0
+margin_bottom = -6.0
+custom_fonts/font = SubResource( 1 )
+text = "6"
+align = 1
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Cooldown" type="TextureProgress" parent="MenempatkanTower/Content1/Complementary"]
+margin_right = 40.0
+margin_bottom = 40.0
+rect_min_size = Vector2( 80, 80 )
+texture_progress = ExtResource( 10 )
+texture_progress_offset = Vector2( 6.952, 7.629 )
+fill_mode = 3
+tint_progress = Color( 1, 1, 1, 0.596078 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="TextureRect" type="TextureRect" parent="MenempatkanTower/Content1"]
+margin_left = 136.0
+margin_top = 2.0
+margin_right = 376.0
+margin_bottom = 81.0
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource( 14 )
+
+[node name="MarginContainer2" type="MarginContainer" parent="MenempatkanTower/Content1"]
+margin_left = 414.0
+margin_right = 512.0
+margin_bottom = 83.0
+size_flags_horizontal = 10
+custom_constants/margin_right = 15
+
+[node name="Icon" type="TextureRect" parent="MenempatkanTower/Content1/MarginContainer2"]
+margin_right = 83.0
+margin_bottom = 83.0
+rect_pivot_offset = Vector2( 64, 64 )
+texture = ExtResource( 13 )
+
+[node name="InfoContent1" type="Label" parent="MenempatkanTower"]
+margin_top = 323.0
+margin_right = 512.0
+margin_bottom = 516.0
+custom_fonts/font = SubResource( 4 )
+text = "Tekan, tahan, kemudian seret tower diatas build point untuk menempatkan tower"
+autowrap = true
+
+[node name="UpgradeAndSellTower" type="VBoxContainer" parent="."]
+visible = false
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -256.0
+margin_right = 256.0
+margin_bottom = 297.0
+size_flags_horizontal = 0
+custom_constants/separation = 24
+
+[node name="TitleContainer" type="MarginContainer" parent="UpgradeAndSellTower"]
+margin_right = 610.0
+margin_bottom = 140.0
+size_flags_horizontal = 4
+custom_constants/margin_top = 24
+custom_constants/margin_bottom = 60
+
+[node name="Title" type="Label" parent="UpgradeAndSellTower/TitleContainer"]
+margin_top = 24.0
+margin_right = 610.0
+margin_bottom = 80.0
+custom_fonts/font = SubResource( 2 )
+text = "Upgrade dan Jual Tower"
+align = 1
+
+[node name="Content1" type="HBoxContainer" parent="UpgradeAndSellTower"]
+margin_left = 152.0
+margin_top = 164.0
+margin_right = 458.0
+margin_bottom = 332.0
+size_flags_horizontal = 4
+
+[node name="TextureRect" type="TextureRect" parent="UpgradeAndSellTower/Content1"]
+margin_right = 306.0
+margin_bottom = 168.0
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource( 15 )
+
+[node name="InfoContent1" type="Label" parent="UpgradeAndSellTower"]
+margin_top = 356.0
+margin_right = 610.0
+margin_bottom = 500.0
+custom_fonts/font = SubResource( 4 )
+text = "Klik pada tower yang telah dibangun dan pilih antara upgrade atau jual tower"
+autowrap = true
+
+[node name="MenggeserKamera" type="VBoxContainer" parent="."]
+visible = false
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -256.0
+margin_right = 256.0
+margin_bottom = 297.0
+size_flags_horizontal = 0
+custom_constants/separation = 24
+
+[node name="TitleContainer" type="MarginContainer" parent="MenggeserKamera"]
+margin_left = 19.0
+margin_right = 492.0
+margin_bottom = 140.0
+size_flags_horizontal = 4
+custom_constants/margin_top = 24
+custom_constants/margin_bottom = 60
+
+[node name="Title" type="Label" parent="MenggeserKamera/TitleContainer"]
+margin_top = 24.0
+margin_right = 473.0
+margin_bottom = 80.0
+custom_fonts/font = SubResource( 2 )
+text = "Menggeser kamera"
+align = 1
+
+[node name="InfoContent1" type="Label" parent="MenggeserKamera"]
+margin_top = 164.0
+margin_right = 512.0
+margin_bottom = 308.0
+custom_fonts/font = SubResource( 4 )
+text = "Tahan dan geser pada area dilayar untuk menggeser kamera"
+autowrap = true
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = -65.0
+size_flags_horizontal = 8
+size_flags_vertical = 0
+custom_constants/margin_right = 28
+custom_constants/margin_left = 806
+custom_constants/margin_bottom = 20
+
+[node name="NextButton" type="TextureButton" parent="MarginContainer"]
+margin_left = 806.0
+margin_right = 996.0
+margin_bottom = 45.0
+texture_normal = ExtResource( 3 )
+texture_pressed = ExtResource( 4 )
+
+[node name="Label" type="Label" parent="MarginContainer/NextButton"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+size_flags_horizontal = 4
+custom_fonts/font = SubResource( 7 )
+text = "Next"
+align = 1
+valign = 1
+
+[connection signal="button_down" from="MarginContainer/NextButton" to="." method="_on_NextButton_button_down"]

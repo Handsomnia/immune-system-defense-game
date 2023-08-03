@@ -1,0 +1,122 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://SupportScene/kamalla_level_selections.tres" type="DynamicFont" id=1]
+[ext_resource path="res://Scene/Cutscenes/Cutscene.gd" type="Script" id=2]
+[ext_resource path="res://Assets/Font/Kamalla.ttf" type="DynamicFontData" id=3]
+
+[sub_resource type="DynamicFont" id=4]
+size = 45
+outline_size = 1
+outline_color = Color( 0.611765, 0.12549, 0.666667, 1 )
+extra_spacing_char = 4
+font_data = ExtResource( 3 )
+
+[sub_resource type="Animation" id=2]
+resource_name = "Cutscene"
+length = 10.0
+tracks/0/type = "value"
+tracks/0/path = NodePath("Control/VBoxContainer/CenterContainer/Label:text")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ "ini adalah cutscene ...", "Text berikutnya ..." ]
+}
+
+[sub_resource type="Animation" id=3]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("Control/VBoxContainer/CenterContainer/Label:text")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ "ini adalah cutscene ..." ]
+}
+
+[node name="NewGameCutscene" type="Node"]
+script = ExtResource( 2 )
+
+[node name="Tween" type="Tween" parent="."]
+
+[node name="Control" type="Control" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="ColorRect" type="ColorRect" parent="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+rect_min_size = Vector2( 1024, 600 )
+color = Color( 0, 0, 0, 1 )
+
+[node name="ImageContainer" type="CenterContainer" parent="Control"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="TextureRect" type="TextureRect" parent="Control/ImageContainer"]
+margin_left = 512.0
+margin_top = 300.0
+margin_right = 512.0
+margin_bottom = 300.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+size_flags_vertical = 4
+
+[node name="CenterContainer" type="CenterContainer" parent="Control/VBoxContainer"]
+margin_left = 162.0
+margin_top = 225.0
+margin_right = 862.0
+margin_bottom = 271.0
+size_flags_horizontal = 6
+size_flags_vertical = 6
+
+[node name="Label" type="Label" parent="Control/VBoxContainer/CenterContainer"]
+margin_right = 700.0
+margin_bottom = 46.0
+rect_min_size = Vector2( 700, 0 )
+custom_fonts/font = ExtResource( 1 )
+text = "ini adalah cutscene ..."
+align = 1
+autowrap = true
+
+[node name="MarginContainer" type="MarginContainer" parent="Control/VBoxContainer"]
+margin_top = 501.0
+margin_right = 1024.0
+margin_bottom = 600.0
+custom_constants/margin_right = 16
+custom_constants/margin_bottom = 24
+
+[node name="Button" type="TextureButton" parent="Control/VBoxContainer/MarginContainer"]
+margin_left = 658.0
+margin_right = 1008.0
+margin_bottom = 75.0
+rect_min_size = Vector2( 350, 75 )
+size_flags_horizontal = 10
+size_flags_vertical = 8
+expand = true
+
+[node name="Label" type="Label" parent="Control/VBoxContainer/MarginContainer/Button"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_colors/font_color_shadow = Color( 0, 0, 0, 0.737255 )
+custom_fonts/font = SubResource( 4 )
+text = "Skip >>"
+align = 1
+valign = 1
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/Cutscene = SubResource( 2 )
+anims/RESET = SubResource( 3 )
+
+[connection signal="pressed" from="Control/VBoxContainer/MarginContainer/Button" to="." method="_on_Button_pressed"]

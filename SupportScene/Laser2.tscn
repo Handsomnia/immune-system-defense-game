@@ -1,0 +1,26 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://SupportScene/Laser2.gd" type="Script" id=1]
+[ext_resource path="res://SupportScene/CPU Spread Particles.tscn" type="PackedScene" id=2]
+
+[sub_resource type="Curve" id=1]
+_data = [ Vector2( 0, 0.576336 ), 0.0, 0.0, 0, 0, Vector2( 0.511076, 1 ), 0.0, 0.0, 0, 0, Vector2( 0.998418, 0.408397 ), 0.0, 0.0, 0, 0 ]
+
+[node name="Laser2" type="RayCast2D"]
+modulate = Color( 0.541176, 0.937255, 1, 1 )
+cast_to = Vector2( 0, 0 )
+script = ExtResource( 1 )
+
+[node name="Line2D" type="Line2D" parent="."]
+points = PoolVector2Array( 0, 0, 0, 0 )
+width_curve = SubResource( 1 )
+default_color = Color( 1, 1, 1, 1 )
+
+[node name="Tween" type="Tween" parent="."]
+
+[node name="CPU Spread Particles" parent="." instance=ExtResource( 2 )]
+emitting = false
+
+[node name="CPU Spread Particles2" parent="." instance=ExtResource( 2 )]
+emitting = false
+direction = Vector2( -1, 0 )

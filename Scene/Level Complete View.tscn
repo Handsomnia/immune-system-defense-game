@@ -1,0 +1,83 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://Assets/Font/Font Res/kenney future narrow.tres" type="DynamicFont" id=1]
+[ext_resource path="res://Assets/Font/Font Res/button_font.tres" type="DynamicFont" id=2]
+[ext_resource path="res://Scene/Level Complete View.gd" type="Script" id=3]
+[ext_resource path="res://Scene/Results.tscn" type="PackedScene" id=4]
+[ext_resource path="res://test/mobile_game_theme.tres" type="Theme" id=5]
+
+[node name="Level Complete View" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+theme = ExtResource( 5 )
+script = ExtResource( 3 )
+
+[node name="ColorRect" type="ColorRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0.219608, 0.219608, 0.219608, 0.54902 )
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_constants/separation = 8
+
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer"]
+margin_right = 1024.0
+margin_bottom = 120.0
+custom_constants/margin_top = 20
+custom_constants/margin_bottom = 32
+
+[node name="Label" type="Label" parent="VBoxContainer/MarginContainer"]
+margin_top = 20.0
+margin_right = 1024.0
+margin_bottom = 88.0
+custom_fonts/font = ExtResource( 1 )
+text = "Level Completed"
+align = 1
+
+[node name="Results" parent="VBoxContainer" instance=ExtResource( 4 )]
+margin_left = 275.0
+margin_top = 128.0
+margin_right = 748.0
+margin_bottom = 299.0
+size_flags_horizontal = 4
+
+[node name="ButtonContainer" type="VBoxContainer" parent="VBoxContainer"]
+margin_top = 307.0
+margin_right = 1024.0
+margin_bottom = 467.0
+custom_constants/separation = 8
+
+[node name="NextLevelButton" type="Button" parent="VBoxContainer/ButtonContainer"]
+margin_left = 312.0
+margin_right = 712.0
+margin_bottom = 48.0
+rect_min_size = Vector2( 400, 0 )
+size_flags_horizontal = 4
+custom_fonts/font = ExtResource( 2 )
+text = "Next Level"
+
+[node name="LevelSelectionButton" type="Button" parent="VBoxContainer/ButtonContainer"]
+margin_left = 312.0
+margin_top = 56.0
+margin_right = 712.0
+margin_bottom = 104.0
+rect_min_size = Vector2( 400, 0 )
+size_flags_horizontal = 4
+custom_fonts/font = ExtResource( 2 )
+text = "Level Selection"
+
+[node name="MainMenuButton" type="Button" parent="VBoxContainer/ButtonContainer"]
+margin_left = 312.0
+margin_top = 112.0
+margin_right = 712.0
+margin_bottom = 160.0
+rect_min_size = Vector2( 400, 0 )
+size_flags_horizontal = 4
+custom_fonts/font = ExtResource( 2 )
+text = "Main Menu"
+
+[connection signal="pressed" from="VBoxContainer/ButtonContainer/NextLevelButton" to="." method="_on_NextLevelButton_pressed"]
+[connection signal="pressed" from="VBoxContainer/ButtonContainer/LevelSelectionButton" to="." method="_on_LevelSelectionButton_pressed"]
+[connection signal="pressed" from="VBoxContainer/ButtonContainer/MainMenuButton" to="." method="_on_MainMenuButton_pressed"]

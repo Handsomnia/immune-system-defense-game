@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=2]
+
+[sub_resource type="Curve" id=1]
+_data = [ Vector2( 0, 0.332061 ), 0.0, 0.0, 0, 0, Vector2( 0.523734, 1 ), 0.0, 0.0, 0, 0, Vector2( 1, 0.301527 ), 0.0, 0.0, 0, 0 ]
+
+[node name="ElectricityManual" type="Node2D"]
+
+[node name="Line2D" type="Line2D" parent="."]
+points = PoolVector2Array( 40, 199, 80, 199, 132, 189, 169, 203, 213, 190, 264, 203, 411, 199, 451, 199 )
+width_curve = SubResource( 1 )
+default_color = Color( 0.4, 0.501961, 1, 1 )

@@ -1,0 +1,89 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Assets/Font/Seek Truth.ttf" type="DynamicFontData" id=1]
+[ext_resource path="res://Scene/Pause View.gd" type="Script" id=3]
+[ext_resource path="res://test/mobile_game_theme.tres" type="Theme" id=4]
+
+[sub_resource type="DynamicFont" id=1]
+size = 60
+outline_size = 2
+outline_color = Color( 0.537255, 0, 0.529412, 1 )
+extra_spacing_char = 10
+font_data = ExtResource( 1 )
+
+[node name="Pause View" type="Control"]
+pause_mode = 2
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 2
+theme = ExtResource( 4 )
+script = ExtResource( 3 )
+
+[node name="ColorRect" type="ColorRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0, 0, 0, 0.4 )
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer"]
+margin_right = 1024.0
+margin_bottom = 186.0
+custom_constants/margin_top = 20
+custom_constants/margin_bottom = 100
+
+[node name="Label" type="Label" parent="VBoxContainer/MarginContainer"]
+margin_top = 20.0
+margin_right = 1024.0
+margin_bottom = 86.0
+custom_fonts/font = SubResource( 1 )
+text = "Paused"
+align = 1
+
+[node name="ButtonContainer" type="VBoxContainer" parent="VBoxContainer"]
+margin_top = 190.0
+margin_right = 1024.0
+margin_bottom = 470.0
+custom_constants/separation = 8
+
+[node name="ContinueButton" type="Button" parent="VBoxContainer/ButtonContainer"]
+margin_left = 332.0
+margin_right = 692.0
+margin_bottom = 64.0
+rect_min_size = Vector2( 360, 64 )
+size_flags_horizontal = 4
+text = "continue"
+
+[node name="OptionsButton" type="Button" parent="VBoxContainer/ButtonContainer"]
+margin_left = 332.0
+margin_top = 72.0
+margin_right = 692.0
+margin_bottom = 136.0
+rect_min_size = Vector2( 360, 64 )
+size_flags_horizontal = 4
+text = "Options"
+
+[node name="LevelSelectionButton" type="Button" parent="VBoxContainer/ButtonContainer"]
+margin_left = 332.0
+margin_top = 144.0
+margin_right = 692.0
+margin_bottom = 208.0
+rect_min_size = Vector2( 360, 64 )
+size_flags_horizontal = 4
+text = "Level Selection"
+
+[node name="MainMenuButton" type="Button" parent="VBoxContainer/ButtonContainer"]
+margin_left = 332.0
+margin_top = 216.0
+margin_right = 692.0
+margin_bottom = 280.0
+rect_min_size = Vector2( 360, 64 )
+size_flags_horizontal = 4
+text = "Main Menu"
+
+[connection signal="pressed" from="VBoxContainer/ButtonContainer/ContinueButton" to="." method="_on_ContinueButton_pressed"]
+[connection signal="pressed" from="VBoxContainer/ButtonContainer/OptionsButton" to="." method="_on_OptionsButton_pressed"]
+[connection signal="pressed" from="VBoxContainer/ButtonContainer/LevelSelectionButton" to="." method="_on_LevelSelectionButton_pressed"]
+[connection signal="pressed" from="VBoxContainer/ButtonContainer/MainMenuButton" to="." method="_on_MainMenuButton_pressed"]

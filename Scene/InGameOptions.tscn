@@ -1,0 +1,856 @@
+[gd_scene load_steps=36 format=2]
+
+[ext_resource path="res://Assets/Font/Kenney Future Narrow.ttf" type="DynamicFontData" id=1]
+[ext_resource path="res://Scene/In Game Options.gd" type="Script" id=2]
+[ext_resource path="res://Assets/Sound Effect/UI SFX/click1.ogg" type="AudioStream" id=3]
+[ext_resource path="res://Crud Asset/macrophage_02.png" type="Texture" id=4]
+[ext_resource path="res://Assets/Resource/kenney_font_16_character_info.tres" type="DynamicFont" id=5]
+[ext_resource path="res://Crud Asset/EColi.png" type="Texture" id=6]
+[ext_resource path="res://Crud Asset/BCell.png" type="Texture" id=7]
+[ext_resource path="res://Crud Asset/Neutrophills_02.png" type="Texture" id=8]
+[ext_resource path="res://Crud Asset/Tcell.png" type="Texture" id=9]
+[ext_resource path="res://Crud Asset/influenzavirus.png" type="Texture" id=10]
+[ext_resource path="res://Crud Asset/coronavirus.png" type="Texture" id=11]
+[ext_resource path="res://Crud Asset/rhinovirus.png" type="Texture" id=12]
+[ext_resource path="res://Crud Asset/Salmonella.png" type="Texture" id=13]
+[ext_resource path="res://test/mobile_game_theme.tres" type="Theme" id=14]
+[ext_resource path="res://Assets/Font/Kamalla.ttf" type="DynamicFontData" id=15]
+[ext_resource path="res://Assets/Font/Seek Truth.ttf" type="DynamicFontData" id=16]
+
+[sub_resource type="DynamicFont" id=18]
+size = 64
+outline_size = 1
+outline_color = Color( 0.611765, 0.12549, 0.666667, 1 )
+extra_spacing_char = 4
+font_data = ExtResource( 15 )
+
+[sub_resource type="DynamicFont" id=19]
+size = 32
+outline_size = 1
+outline_color = Color( 0.611765, 0.12549, 0.666667, 1 )
+extra_spacing_char = 4
+font_data = ExtResource( 15 )
+
+[sub_resource type="DynamicFont" id=3]
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=4]
+size = 35
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=10]
+size = 24
+outline_size = 2
+outline_color = Color( 0.372549, 1, 0, 0.403922 )
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=14]
+size = 12
+outline_size = 1
+outline_color = Color( 0, 0.909804, 0.862745, 0.403922 )
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=15]
+size = 12
+outline_size = 1
+outline_color = Color( 0.486275, 0, 0.87451, 0.403922 )
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=16]
+size = 12
+outline_size = 1
+outline_color = Color( 0, 0.14902, 0.988235, 0.403922 )
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=17]
+size = 12
+outline_size = 1
+outline_color = Color( 0.886275, 0.768627, 0, 0.403922 )
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=6]
+size = 12
+outline_size = 1
+outline_color = Color( 0.333333, 0.192157, 0, 0.403922 )
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=11]
+size = 24
+outline_size = 2
+outline_color = Color( 1, 0.2, 0, 0.403922 )
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=12]
+outline_size = 2
+outline_color = Color( 1, 0.2, 0, 0.403922 )
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=7]
+size = 12
+outline_size = 1
+outline_color = Color( 0.0392157, 0.32549, 0.0313726, 0.403922 )
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=8]
+size = 12
+outline_size = 1
+outline_color = Color( 0.905882, 0.0470588, 0.0470588, 0.403922 )
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=9]
+size = 12
+outline_size = 1
+outline_color = Color( 0.298039, 0, 0.541176, 0.403922 )
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=13]
+size = 12
+outline_size = 1
+outline_color = Color( 0.0196078, 0, 0.458824, 0.403922 )
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=20]
+size = 50
+outline_size = 2
+outline_color = Color( 0.537255, 0, 0.529412, 1 )
+extra_spacing_char = 10
+font_data = ExtResource( 16 )
+
+[sub_resource type="DynamicFont" id=21]
+size = 40
+outline_size = 1
+outline_color = Color( 0.611765, 0.12549, 0.666667, 1 )
+extra_spacing_char = 4
+font_data = ExtResource( 15 )
+
+[sub_resource type="DynamicFont" id=5]
+size = 25
+font_data = ExtResource( 1 )
+
+[node name="InGameOptions" type="Control"]
+pause_mode = 2
+anchor_right = 1.0
+anchor_bottom = 1.0
+theme = ExtResource( 14 )
+script = ExtResource( 2 )
+
+[node name="ColorRect" type="ColorRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0.235294, 0.678431, 0.482353, 1 )
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="Label" type="Label" parent="VBoxContainer"]
+margin_right = 1024.0
+margin_bottom = 64.0
+size_flags_vertical = 1
+custom_fonts/font = SubResource( 18 )
+text = "Options"
+align = 1
+
+[node name="TabContainer" type="TabContainer" parent="VBoxContainer"]
+margin_top = 68.0
+margin_right = 1024.0
+margin_bottom = 544.0
+size_flags_vertical = 3
+custom_fonts/font = SubResource( 19 )
+
+[node name="Settings" type="CenterContainer" parent="VBoxContainer/TabContainer"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 2.0
+margin_top = 42.0
+margin_bottom = -2.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/TabContainer/Settings"]
+margin_left = 261.0
+margin_top = 138.0
+margin_right = 761.0
+margin_bottom = 294.0
+
+[node name="Label" type="Label" parent="VBoxContainer/TabContainer/Settings/VBoxContainer"]
+margin_right = 500.0
+margin_bottom = 18.0
+custom_fonts/font = SubResource( 3 )
+text = "Music"
+align = 1
+
+[node name="MusicSlider" type="HSlider" parent="VBoxContainer/TabContainer/Settings/VBoxContainer"]
+margin_top = 22.0
+margin_right = 500.0
+margin_bottom = 46.0
+rect_min_size = Vector2( 500, 0 )
+min_value = -20.0
+max_value = 0.0
+
+[node name="Label2" type="Label" parent="VBoxContainer/TabContainer/Settings/VBoxContainer"]
+margin_top = 50.0
+margin_right = 500.0
+margin_bottom = 68.0
+custom_fonts/font = SubResource( 3 )
+text = "SFX"
+align = 1
+
+[node name="SFXSlider" type="HSlider" parent="VBoxContainer/TabContainer/Settings/VBoxContainer"]
+margin_top = 72.0
+margin_right = 500.0
+margin_bottom = 96.0
+rect_min_size = Vector2( 500, 0 )
+min_value = -20.0
+max_value = 0.0
+
+[node name="SaveSettingsButton" type="Button" parent="VBoxContainer/TabContainer/Settings/VBoxContainer"]
+margin_top = 100.0
+margin_right = 500.0
+margin_bottom = 156.0
+text = "Save"
+
+[node name="Info" type="VBoxContainer" parent="VBoxContainer/TabContainer"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 4.0
+margin_top = 32.0
+margin_right = -4.0
+margin_bottom = -4.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/TabContainer/Info"]
+margin_left = 46.0
+margin_right = 970.0
+margin_bottom = 364.0
+size_flags_horizontal = 4
+
+[node name="Label" type="Label" parent="VBoxContainer/TabContainer/Info/VBoxContainer"]
+margin_right = 924.0
+margin_bottom = 60.0
+rect_min_size = Vector2( 0, 60 )
+custom_fonts/font = SubResource( 4 )
+text = "Informasi karakter"
+align = 1
+valign = 2
+
+[node name="ScrollContainer" type="ScrollContainer" parent="VBoxContainer/TabContainer/Info/VBoxContainer"]
+margin_top = 64.0
+margin_right = 924.0
+margin_bottom = 364.0
+rect_min_size = Vector2( 924, 300 )
+follow_focus = true
+scroll_horizontal_enabled = false
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/TabContainer/Info/VBoxContainer/ScrollContainer"]
+margin_left = 93.0
+margin_right = 831.0
+margin_bottom = 1319.0
+size_flags_horizontal = 6
+custom_constants/separation = 10
+
+[node name="Tower" type="Label" parent="VBoxContainer/TabContainer/Info/VBoxContainer/ScrollContainer/VBoxContainer"]
+margin_left = 288.0
+margin_right = 449.0
+margin_bottom = 27.0
+size_flags_horizontal = 4
+custom_fonts/font = SubResource( 10 )
+text = "Sistem Imun"
+
+[node name="HSeparator" type="HSeparator" parent="VBoxContainer/TabContainer/Info/VBoxContainer/ScrollContainer/VBoxContainer"]
+margin_left = 284.0
+margin_top = 37.0
+margin_right = 454.0
+margin_bottom = 41.0
+rect_min_size = Vector2( 170, 0 )
+size_flags_horizontal = 4
+
+[node name="ImmuneCellRow1" type="HBoxContainer" parent="VBoxContainer/TabContainer/Info/VBoxContainer/ScrollContainer/VBoxContainer"]
+margin_top = 51.0
+margin_right = 738.0
+margin_bottom = 325.0
+rect_min_size = Vector2( 0, 74 )
+custom_constants/separation = 46
+
+[node name="MacrophageInfo" type="VBoxContainer" parent="VBoxContainer/TabContainer/Info/VBoxContainer/ScrollContainer/VBoxContainer/ImmuneCellRow1"]
+margin_right = 150.0
+margin_bottom = 274.0
+rect_min_size = Vector2( 150, 0 )
+
+[node name="NameLabel" type="Label" parent="VBoxContainer/TabContainer/Info/VBoxContainer/ScrollContainer/VBoxContainer/ImmuneCellRow1/MacrophageInfo"]
+margin_right = 150.0
+margin_bottom = 18.0
+custom_fonts/font = ExtResource( 5 )
+text = "Macrophage"
+align = 1
+
+[node name="CharactherTexture" type="TextureRect" parent="VBoxContainer/TabContainer/Info/VBoxContainer/ScrollContainer/VBoxContainer/ImmuneCellRow1/MacrophageInfo"]
+margin_left = 43.0
+margin_top = 22.0
+margin_right = 107.0
+margin_bottom = 86.0
+size_flags_horizontal = 6
+size_flags_vertical = 10
+texture = ExtResource( 4 )
+
+[node name="InfoLabel" type="Label" parent="VBoxContainer/TabContainer/Info/VBoxContainer/ScrollContainer/VBoxContainer/ImmuneCellRow1/MacrophageInfo"]
+margin_top = 90.0
+margin_right = 150.0
+margin_bottom = 274.0
+custom_fonts/font = SubResource( 14 )
+text = "Merupakan sel imun
+yang pertama untuk
+mempertahankan tubuh
+saat terjadi infeksi.
+
+Kemampuan : menghasilkan kerusakan area.
+
+"
+align = 1
+autowrap = true
+
+[node name="NeutrophillInfo" type="VBoxContainer" parent="VBoxContainer/TabContainer/Info/VBoxContainer/ScrollContainer/VBoxContainer/ImmuneCellRow1"]
+margin_left = 196.0
+margin_right = 346.0
+margin_bottom = 274.0
+rect_min_size = Vector2( 150, 0 )
+
+[node name="NameLabel" type="Label" parent="VBoxContainer/TabContainer/Info/VBoxContainer/ScrollContainer/VBoxContainer/ImmuneCellRow1/NeutrophillInfo"]
+margin_right = 150.0
+margin_bottom = 18.0
+custom_fonts/font = ExtResource( 5 )
+text = "Neutrophill"
+align = 1
+
+[node name="CharactherTexture" type="TextureRect" parent="VBoxContainer/TabContainer/Info/VBoxContainer/ScrollContainer/VBoxContainer/ImmuneCellRow1/NeutrophillInfo"]
+margin_left = 43.0
+margin_top = 22.0
+margin_right = 107.0
+margin_bottom = 86.0
+size_flags_horizontal = 6
+size_flags_vertical = 10
+texture = ExtResource( 8 )
+
+[node name="InfoLabel" type="Label" parent="VBoxContainer/TabContainer/Info/VBoxContainer/ScrollContainer/VBoxContainer/ImmuneCellRow1/NeutrophillInfo"]
+margin_top = 90.0
+margin_right = 150.0
+margin_bottom = 274.0
+custom_fonts/font = SubResource( 15 )
+text = "merupakan bagian
+dari sistem
+kekebalan tubuh
+bawaan.
+
+kemampuan : menyebabkan efek slow kepada musuh.
+
+
+"
+align = 1
+autowrap = true
+
+[node name="TCellInfo" type="VBoxContainer" parent="VBoxContainer/TabContainer/Info/VBoxContainer/ScrollContainer/VBoxContainer/ImmuneCellRow1"]
+margin_left = 392.0
+margin_right = 542.0
+margin_bottom = 274.0
+rect_min_size = Vector2( 150, 0 )
+
+[node name="NameLabel" type="Label" parent="VBoxContainer/TabContainer/Info/VBoxContainer/ScrollContainer/VBoxContainer/ImmuneCellRow1/TCellInfo"]
+margin_right = 150.0
+margin_bottom = 18.0
+custom_fonts/font = ExtResource( 5 )
+text = "T Cell"
+align = 1
+
+[node name="CharactherTexture" type="TextureRect" parent="VBoxContainer/TabContainer/Info/VBoxContainer/ScrollContainer/VBoxContainer/ImmuneCellRow1/TCellInfo"]
+margin_left = 43.0
+margin_top = 22.0
+margin_right = 107.0
+margin_bottom = 86.0
+size_flags_horizontal = 6
+size_flags_vertical = 10
+texture = ExtResource( 9 )
+
+[node name="InfoLabel" type="Label" parent="VBoxContainer/TabContainer/Info/VBoxContainer/ScrollContainer/VBoxContainer/ImmuneCellRow1/TCellInfo"]
+margin_top = 90.0
+margin_right = 150.0
+margin_bottom = 274.0
+custom_fonts/font = SubResource( 16 )
+text = "Merupakan sel yang
+diprogram spesifik
+untuk partikel asing
+tertentu.
+
+kemampuan : memiliki jarak tembak yang jauh.
+
+
+"
+align = 1
+autowrap = true
+
+[node name="SomeCharacter5" type="VBoxContainer" parent="VBoxContainer/TabContainer/Info/VBoxContainer/ScrollContainer/VBoxContainer/ImmuneCellRow1"]
+margin_left = 588.0
+margin_right = 738.0
+margin_bottom = 274.0
+rect_min_size = Vector2( 150, 0 )
+
+[node name="NameLabel" type="Label" parent="VBoxContainer/TabContainer/Info/VBoxContainer/ScrollContainer/VBoxContainer/ImmuneCellRow1/SomeCharacter5"]
+margin_right = 150.0
+margin_bottom = 18.0
+custom_fonts/font = ExtResource( 5 )
+text = "B Cell"
+align = 1
+
+[node name="CharactherTexture" type="TextureRect" parent="VBoxContainer/TabContainer/Info/VBoxContainer/ScrollContainer/VBoxContainer/ImmuneCellRow1/SomeCharacter5"]
+margin_left = 43.0
+margin_top = 22.0
+margin_right = 107.0
+margin_bottom = 86.0
+size_flags_horizontal = 6
+size_flags_vertical = 10
+texture = ExtResource( 7 )
+
+[node name="InfoLabel" type="Label" parent="VBoxContainer/TabContainer/Info/VBoxContainer/ScrollContainer/VBoxContainer/ImmuneCellRow1/SomeCharacter5"]
+margin_top = 90.0
+margin_right = 150.0
+margin_bottom = 274.0
+custom_fonts/font = SubResource( 17 )
+text = "merupakan sel
+yang bertugas
+untuk memediasi
+produksi antibodi.
+
+kemampuan : menghasilkan antibodi tetapi tidak dapat membuat kerusakan.
+"
+align = 1
+autowrap = true
+
+[node name="ImmuneCellRow2" type="HBoxContainer" parent="VBoxContainer/TabContainer/Info/VBoxContainer/ScrollContainer/VBoxContainer"]
+margin_top = 335.0
+margin_right = 738.0
+margin_bottom = 541.0
+rect_min_size = Vector2( 0, 74 )
+custom_constants/separation = 46
+
+[node name="MacrophageInfo" type="VBoxContainer" parent="VBoxContainer/TabContainer/Info/VBoxContainer/ScrollContainer/VBoxContainer/ImmuneCellRow2"]
+margin_right = 150.0
+margin_bottom = 206.0
+rect_min_size = Vector2( 150, 0 )
+
+[node name="NameLabel" type="Label" parent="VBoxContainer/TabContainer/Info/VBoxContainer/ScrollContainer/VBoxContainer/ImmuneCellRow2/MacrophageInfo"]
+margin_right = 150.0
+margin_bottom = 18.0
+custom_fonts/font = ExtResource( 5 )
+text = "Macrophage"
+align = 1
+
+[node name="CharactherTexture" type="TextureRect" parent="VBoxContainer/TabContainer/Info/VBoxContainer/ScrollContainer/VBoxContainer/ImmuneCellRow2/MacrophageInfo"]
+margin_left = 43.0
+margin_top = 22.0
+margin_right = 107.0
+margin_bottom = 86.0
+size_flags_horizontal = 6
+size_flags_vertical = 10
+texture = ExtResource( 4 )
+
+[node name="InfoLabel" type="Label" parent="VBoxContainer/TabContainer/Info/VBoxContainer/ScrollContainer/VBoxContainer/ImmuneCellRow2/MacrophageInfo"]
+margin_top = 90.0
+margin_right = 150.0
+margin_bottom = 206.0
+custom_fonts/font = SubResource( 6 )
+text = "Merupakan sel imun
+yang pertama untuk
+mempertahankan tubuh
+saat terjadi infeksi
+
+"
+align = 1
+autowrap = true
+
+[node name="Enemies" type="Label" parent="VBoxContainer/TabContainer/Info/VBoxContainer/ScrollContainer/VBoxContainer"]
+margin_left = 246.0
+margin_top = 551.0
+margin_right = 492.0
+margin_bottom = 578.0
+size_flags_horizontal = 4
+custom_fonts/font = SubResource( 11 )
+text = "Bakteri dan Virus"
+
+[node name="HSeparator2" type="HSeparator" parent="VBoxContainer/TabContainer/Info/VBoxContainer/ScrollContainer/VBoxContainer"]
+margin_left = 234.0
+margin_top = 588.0
+margin_right = 504.0
+margin_bottom = 592.0
+rect_min_size = Vector2( 270, 0 )
+size_flags_horizontal = 4
+
+[node name="EnemiesRow1" type="HBoxContainer" parent="VBoxContainer/TabContainer/Info/VBoxContainer/ScrollContainer/VBoxContainer"]
+margin_top = 602.0
+margin_right = 738.0
+margin_bottom = 981.0
+rect_min_size = Vector2( 0, 74 )
+custom_constants/separation = 46
+
+[node name="CharacterInfo" type="VBoxContainer" parent="VBoxContainer/TabContainer/Info/VBoxContainer/ScrollContainer/VBoxContainer/EnemiesRow1"]
+margin_right = 140.0
+margin_bottom = 379.0
+rect_min_size = Vector2( 140, 0 )
+
+[node name="NameLabel" type="Label" parent="VBoxContainer/TabContainer/Info/VBoxContainer/ScrollContainer/VBoxContainer/EnemiesRow1/CharacterInfo"]
+margin_right = 140.0
+margin_bottom = 18.0
+custom_fonts/font = SubResource( 12 )
+text = "E Coli"
+align = 1
+
+[node name="CharactherTexture" type="TextureRect" parent="VBoxContainer/TabContainer/Info/VBoxContainer/ScrollContainer/VBoxContainer/EnemiesRow1/CharacterInfo"]
+margin_left = 38.0
+margin_top = 22.0
+margin_right = 102.0
+margin_bottom = 106.0
+rect_min_size = Vector2( 0, 84 )
+size_flags_horizontal = 6
+size_flags_vertical = 10
+texture = ExtResource( 6 )
+
+[node name="InfoLabel" type="Label" parent="VBoxContainer/TabContainer/Info/VBoxContainer/ScrollContainer/VBoxContainer/EnemiesRow1/CharacterInfo"]
+margin_top = 110.0
+margin_right = 140.0
+margin_bottom = 379.0
+custom_fonts/font = SubResource( 6 )
+text = "E Coli merupakan bakteri yang dapat menyebabkan penyakit pada pencernaan.
+
+
+
+
+
+
+
+
+
+
+"
+align = 1
+valign = 3
+autowrap = true
+
+[node name="CharacterInfo2" type="VBoxContainer" parent="VBoxContainer/TabContainer/Info/VBoxContainer/ScrollContainer/VBoxContainer/EnemiesRow1"]
+margin_left = 186.0
+margin_right = 336.0
+margin_bottom = 379.0
+rect_min_size = Vector2( 150, 0 )
+
+[node name="NameLabel" type="Label" parent="VBoxContainer/TabContainer/Info/VBoxContainer/ScrollContainer/VBoxContainer/EnemiesRow1/CharacterInfo2"]
+margin_right = 150.0
+margin_bottom = 18.0
+custom_fonts/font = SubResource( 12 )
+text = "Influenza Virus"
+align = 1
+
+[node name="CharactherTexture" type="TextureRect" parent="VBoxContainer/TabContainer/Info/VBoxContainer/ScrollContainer/VBoxContainer/EnemiesRow1/CharacterInfo2"]
+margin_left = 43.0
+margin_top = 22.0
+margin_right = 107.0
+margin_bottom = 106.0
+rect_min_size = Vector2( 0, 84 )
+size_flags_horizontal = 6
+size_flags_vertical = 4
+texture = ExtResource( 10 )
+
+[node name="InfoLabel" type="Label" parent="VBoxContainer/TabContainer/Info/VBoxContainer/ScrollContainer/VBoxContainer/EnemiesRow1/CharacterInfo2"]
+margin_top = 110.0
+margin_right = 150.0
+margin_bottom = 328.0
+custom_fonts/font = SubResource( 7 )
+text = "virus jenis ini merupakan virus yang dapat meyebabkan penyakit pada pernapasan. 
+
+Kemampuan : memiliki pertahanan yang kuat.
+Kelemahan : tower dengan kerusakan yang tinggi.
+"
+align = 1
+autowrap = true
+
+[node name="CharacterInfo3" type="VBoxContainer" parent="VBoxContainer/TabContainer/Info/VBoxContainer/ScrollContainer/VBoxContainer/EnemiesRow1"]
+margin_left = 382.0
+margin_right = 532.0
+margin_bottom = 379.0
+rect_min_size = Vector2( 150, 0 )
+
+[node name="NameLabel" type="Label" parent="VBoxContainer/TabContainer/Info/VBoxContainer/ScrollContainer/VBoxContainer/EnemiesRow1/CharacterInfo3"]
+margin_right = 150.0
+margin_bottom = 18.0
+custom_fonts/font = SubResource( 12 )
+text = "Coronavirus"
+align = 1
+
+[node name="CharactherTexture" type="TextureRect" parent="VBoxContainer/TabContainer/Info/VBoxContainer/ScrollContainer/VBoxContainer/EnemiesRow1/CharacterInfo3"]
+margin_left = 43.0
+margin_top = 22.0
+margin_right = 107.0
+margin_bottom = 106.0
+rect_min_size = Vector2( 0, 84 )
+size_flags_horizontal = 6
+size_flags_vertical = 10
+texture = ExtResource( 11 )
+
+[node name="InfoLabel" type="Label" parent="VBoxContainer/TabContainer/Info/VBoxContainer/ScrollContainer/VBoxContainer/EnemiesRow1/CharacterInfo3"]
+margin_top = 110.0
+margin_right = 150.0
+margin_bottom = 379.0
+custom_fonts/font = SubResource( 8 )
+text = "jenis virus ini merupakan virus yang dapat menyebabkan penyakit pada pernapasan.
+
+Kemampuan : menyerang dengan jumlah yang banyak.
+Kelemahan : tower yang memiliki kemampuan kerusakan area.
+
+
+"
+align = 1
+autowrap = true
+
+[node name="CharacterInfo4" type="VBoxContainer" parent="VBoxContainer/TabContainer/Info/VBoxContainer/ScrollContainer/VBoxContainer/EnemiesRow1"]
+margin_left = 578.0
+margin_right = 728.0
+margin_bottom = 379.0
+rect_min_size = Vector2( 150, 0 )
+
+[node name="NameLabel" type="Label" parent="VBoxContainer/TabContainer/Info/VBoxContainer/ScrollContainer/VBoxContainer/EnemiesRow1/CharacterInfo4"]
+margin_right = 150.0
+margin_bottom = 18.0
+custom_fonts/font = SubResource( 12 )
+text = "Rhinovirus"
+align = 1
+
+[node name="CharactherTexture" type="TextureRect" parent="VBoxContainer/TabContainer/Info/VBoxContainer/ScrollContainer/VBoxContainer/EnemiesRow1/CharacterInfo4"]
+margin_left = 43.0
+margin_top = 22.0
+margin_right = 107.0
+margin_bottom = 106.0
+rect_min_size = Vector2( 0, 84 )
+size_flags_horizontal = 6
+size_flags_vertical = 10
+texture = ExtResource( 12 )
+
+[node name="InfoLabel" type="Label" parent="VBoxContainer/TabContainer/Info/VBoxContainer/ScrollContainer/VBoxContainer/EnemiesRow1/CharacterInfo4"]
+margin_top = 110.0
+margin_right = 150.0
+margin_bottom = 379.0
+custom_fonts/font = SubResource( 9 )
+text = "virus jenis ini merupakan virus yang dapat meyebabkan penyakit pada pernapasan. 
+
+Kemampuan : memiliki pertahanan yang kuat.
+Kelemahan : tower dengan kerusakan yang tinggi.
+
+
+
+"
+align = 1
+autowrap = true
+
+[node name="EnemiesRow2" type="HBoxContainer" parent="VBoxContainer/TabContainer/Info/VBoxContainer/ScrollContainer/VBoxContainer"]
+margin_top = 991.0
+margin_right = 738.0
+margin_bottom = 1319.0
+rect_min_size = Vector2( 0, 74 )
+custom_constants/separation = 46
+
+[node name="CharacterInfo" type="VBoxContainer" parent="VBoxContainer/TabContainer/Info/VBoxContainer/ScrollContainer/VBoxContainer/EnemiesRow2"]
+margin_right = 150.0
+margin_bottom = 328.0
+rect_min_size = Vector2( 150, 0 )
+
+[node name="NameLabel" type="Label" parent="VBoxContainer/TabContainer/Info/VBoxContainer/ScrollContainer/VBoxContainer/EnemiesRow2/CharacterInfo"]
+margin_right = 150.0
+margin_bottom = 18.0
+custom_fonts/font = SubResource( 12 )
+text = "Salmonella"
+align = 1
+
+[node name="CharactherTexture" type="TextureRect" parent="VBoxContainer/TabContainer/Info/VBoxContainer/ScrollContainer/VBoxContainer/EnemiesRow2/CharacterInfo"]
+margin_left = 43.0
+margin_top = 22.0
+margin_right = 107.0
+margin_bottom = 106.0
+rect_min_size = Vector2( 0, 84 )
+size_flags_horizontal = 6
+size_flags_vertical = 10
+texture = ExtResource( 13 )
+
+[node name="InfoLabel" type="Label" parent="VBoxContainer/TabContainer/Info/VBoxContainer/ScrollContainer/VBoxContainer/EnemiesRow2/CharacterInfo"]
+margin_top = 110.0
+margin_right = 150.0
+margin_bottom = 328.0
+custom_fonts/font = SubResource( 13 )
+text = "bakteri jenis ini dapat meyebabkan penyakit seperti tifus dan diare.
+
+kemampuan : memiliki kecepatan bergerak yang lebih tinggi.
+Kelemahan : tower dengan efek melambatkan.
+
+"
+align = 1
+autowrap = true
+
+[node name="Credits" type="MarginContainer" parent="VBoxContainer/TabContainer"]
+visible = false
+margin_right = 649.0
+margin_bottom = 445.0
+size_flags_horizontal = 0
+
+[node name="ScrollContainer" type="ScrollContainer" parent="VBoxContainer/TabContainer/Credits"]
+margin_right = 649.0
+margin_bottom = 445.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/TabContainer/Credits/ScrollContainer"]
+margin_right = 649.0
+margin_bottom = 344.0
+size_flags_horizontal = 6
+
+[node name="Label" type="Label" parent="VBoxContainer/TabContainer/Credits/ScrollContainer/VBoxContainer"]
+margin_left = 235.0
+margin_right = 414.0
+margin_bottom = 56.0
+size_flags_horizontal = 6
+custom_fonts/font = SubResource( 20 )
+text = "Credits"
+
+[node name="HSeparator" type="HSeparator" parent="VBoxContainer/TabContainer/Credits/ScrollContainer/VBoxContainer"]
+margin_top = 60.0
+margin_right = 649.0
+margin_bottom = 80.0
+custom_constants/separation = 20
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/TabContainer/Credits/ScrollContainer/VBoxContainer"]
+margin_top = 84.0
+margin_right = 649.0
+margin_bottom = 124.0
+custom_constants/separation = 10
+
+[node name="Title" type="Label" parent="VBoxContainer/TabContainer/Credits/ScrollContainer/VBoxContainer/HBoxContainer"]
+margin_right = 200.0
+margin_bottom = 40.0
+rect_min_size = Vector2( 200, 0 )
+custom_fonts/font = SubResource( 21 )
+text = "Production"
+
+[node name="Separator" type="Label" parent="VBoxContainer/TabContainer/Credits/ScrollContainer/VBoxContainer/HBoxContainer"]
+margin_left = 210.0
+margin_right = 217.0
+margin_bottom = 40.0
+custom_fonts/font = SubResource( 21 )
+text = ":"
+
+[node name="Details" type="Label" parent="VBoxContainer/TabContainer/Credits/ScrollContainer/VBoxContainer/HBoxContainer"]
+margin_left = 227.0
+margin_right = 515.0
+margin_bottom = 40.0
+custom_fonts/font = SubResource( 21 )
+text = "Muhammad Abduh"
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="VBoxContainer/TabContainer/Credits/ScrollContainer/VBoxContainer"]
+margin_top = 128.0
+margin_right = 649.0
+margin_bottom = 212.0
+custom_constants/separation = 10
+
+[node name="Title" type="Label" parent="VBoxContainer/TabContainer/Credits/ScrollContainer/VBoxContainer/HBoxContainer2"]
+margin_right = 200.0
+margin_bottom = 84.0
+rect_min_size = Vector2( 200, 0 )
+size_flags_vertical = 1
+custom_fonts/font = SubResource( 21 )
+text = "Music"
+
+[node name="Separator" type="Label" parent="VBoxContainer/TabContainer/Credits/ScrollContainer/VBoxContainer/HBoxContainer2"]
+margin_left = 210.0
+margin_right = 217.0
+margin_bottom = 84.0
+size_flags_vertical = 1
+custom_fonts/font = SubResource( 21 )
+text = ":"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/TabContainer/Credits/ScrollContainer/VBoxContainer/HBoxContainer2"]
+margin_left = 227.0
+margin_right = 420.0
+margin_bottom = 84.0
+
+[node name="Details" type="Label" parent="VBoxContainer/TabContainer/Credits/ScrollContainer/VBoxContainer/HBoxContainer2/VBoxContainer"]
+margin_right = 193.0
+margin_bottom = 40.0
+custom_fonts/font = SubResource( 21 )
+text = "kenney.nl"
+
+[node name="Details2" type="Label" parent="VBoxContainer/TabContainer/Credits/ScrollContainer/VBoxContainer/HBoxContainer2/VBoxContainer"]
+margin_top = 44.0
+margin_right = 193.0
+margin_bottom = 84.0
+custom_fonts/font = SubResource( 21 )
+text = "zapslat.com"
+
+[node name="HBoxContainer3" type="HBoxContainer" parent="VBoxContainer/TabContainer/Credits/ScrollContainer/VBoxContainer"]
+margin_top = 216.0
+margin_right = 649.0
+margin_bottom = 344.0
+custom_constants/separation = 10
+
+[node name="Title" type="Label" parent="VBoxContainer/TabContainer/Credits/ScrollContainer/VBoxContainer/HBoxContainer3"]
+margin_right = 203.0
+margin_bottom = 128.0
+rect_min_size = Vector2( 200, 0 )
+size_flags_vertical = 1
+custom_fonts/font = SubResource( 21 )
+text = "Assets & art"
+
+[node name="Separator" type="Label" parent="VBoxContainer/TabContainer/Credits/ScrollContainer/VBoxContainer/HBoxContainer3"]
+margin_left = 213.0
+margin_right = 220.0
+margin_bottom = 128.0
+size_flags_vertical = 1
+custom_fonts/font = SubResource( 21 )
+text = ":"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/TabContainer/Credits/ScrollContainer/VBoxContainer/HBoxContainer3"]
+margin_left = 230.0
+margin_right = 649.0
+margin_bottom = 128.0
+
+[node name="Details" type="Label" parent="VBoxContainer/TabContainer/Credits/ScrollContainer/VBoxContainer/HBoxContainer3/VBoxContainer"]
+margin_right = 419.0
+margin_bottom = 40.0
+custom_fonts/font = SubResource( 21 )
+text = "kenney.nl"
+
+[node name="Details2" type="Label" parent="VBoxContainer/TabContainer/Credits/ScrollContainer/VBoxContainer/HBoxContainer3/VBoxContainer"]
+margin_top = 44.0
+margin_right = 419.0
+margin_bottom = 84.0
+custom_fonts/font = SubResource( 21 )
+text = "Muhammad Abduh"
+
+[node name="Details3" type="Label" parent="VBoxContainer/TabContainer/Credits/ScrollContainer/VBoxContainer/HBoxContainer3/VBoxContainer"]
+margin_top = 88.0
+margin_right = 419.0
+margin_bottom = 128.0
+custom_fonts/font = SubResource( 21 )
+text = "DALL-E image generator"
+
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer"]
+margin_top = 548.0
+margin_right = 1024.0
+margin_bottom = 600.0
+size_flags_vertical = 9
+custom_constants/margin_left = 25
+custom_constants/margin_bottom = 23
+
+[node name="Button" type="Button" parent="VBoxContainer/MarginContainer"]
+margin_left = 25.0
+margin_right = 93.0
+margin_bottom = 29.0
+size_flags_horizontal = 0
+size_flags_vertical = 8
+custom_fonts/font = SubResource( 5 )
+text = "Back"
+
+[node name="ButtonSFX" type="AudioStreamPlayer" parent="." groups=["sfx"]]
+stream = ExtResource( 3 )
+
+[connection signal="value_changed" from="VBoxContainer/TabContainer/Settings/VBoxContainer/MusicSlider" to="." method="_on_MusicSlider_value_changed"]
+[connection signal="value_changed" from="VBoxContainer/TabContainer/Settings/VBoxContainer/SFXSlider" to="." method="_on_EffectSlider_value_changed"]
+[connection signal="pressed" from="VBoxContainer/TabContainer/Settings/VBoxContainer/SaveSettingsButton" to="." method="_on_SaveSettingsButton_pressed"]
+[connection signal="pressed" from="VBoxContainer/MarginContainer/Button" to="." method="_on_Button_pressed"]
