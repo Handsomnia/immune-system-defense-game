@@ -31,15 +31,20 @@ var touch_location
 var drag_location
 var events = {}
 
-var camera_offset_min = -60.0
-var camera_offset_max = 60.0
+var camera_offset_min = -120.0
+var camera_offset_max = 120.0
 
 func _ready():
 	
 	wave_size = GameData.wave_data[map].size()
 #	print (int(map.right(5)) + 1)
 	wave_remaining = wave_size
-	cash = 40 if map == "Level3" else 20
+	if map == "Level3":
+		 cash = 40
+	if map == "Level4":
+		cash = 50
+	if map == "Level5":
+		cash = 60
 	
 	for i in wave_size: # get wave data in the fisrt instance of game
 		enemies_in_waves += GameData.wave_data[map][str(i+1)].size()
