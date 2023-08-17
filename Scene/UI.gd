@@ -85,10 +85,10 @@ func _on_Pause_pressed():
 func _on_SpeedUp_pressed():
 	if get_parent().build_mode:
 		get_parent().cancel_build_mode()
-	if Engine.get_time_scale() == 8.0:#4.0
+	if Engine.get_time_scale() == 4.0:#4.0
 		Engine.set_time_scale(1.0)
 	else:
-		Engine.set_time_scale(8.0)#4.0
+		Engine.set_time_scale(4.0)#4.0
 
 func cooldown(tower):
 	var cooldown_time = GameData.tower_data[tower]["cooldown"]
